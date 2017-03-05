@@ -10,7 +10,7 @@ module.exports = {
       key: '~/.ssh/dap.pem',
       ref: 'origin/master',
       repo: 'git@github.com:dapinitial/davidpuerto.com.git',
-      path: '/home/ec2-user/davidpuerto.com',
+      path: 'davidpuerto.com',
       'post-deploy': 'npm install && pm2 startOrRestart ecosystem.config.js'
     }
   }
