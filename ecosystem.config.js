@@ -5,7 +5,7 @@ module.exports = {
   }],
   deploy: {
     production: {
-      user: 'root',
+      user: 'ec2-user',
       host: 'ec2-35-163-175-145.us-west-2.compute.amazonaws.com',
       key: '~/.ssh/dap.pem',
       ref: 'origin/master',
