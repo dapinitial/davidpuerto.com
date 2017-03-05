@@ -1,0 +1,39 @@
+::-webkit-scrollbar {
+   width: 0 !important;
+}
+
+::-webkit-scrollbar-track {
+	background-color:transparent;
+	box-shadow: none;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  user-select: none;
+}
+
+html {
+  font-size: 1px;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+
+body {
+  background: #1a1a1a;
+  color: #666;
+  font-family: 'Lato', Helvetica, Arial, sans-serif;
+	overflow-x: hidden;
+}

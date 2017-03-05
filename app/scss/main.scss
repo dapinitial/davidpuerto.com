@@ -1,7 +1,12 @@
 // :::: BASE & THEME :::: //
 @import "lib/base/reset";
 @import "lib/theme/vars";
+@import "lib/base/typography";
+@import "lib/base/mixins";
+@import "lib/base/functions";
+@import "lib/base/anchors";
 @import "lib/base/base";
+@import "lib/base/forms";
 
 // :::: LAYOUT :::: //
 @import "lib/layout/layout";

@@ -1,0 +1,22 @@
+a {
+  &:link {
+    color: #000;
+  	display: block;
+    transition: .2s linear color;
+  }
+  &:visited {
+    color: #999;
+  }
+  &:hover {
+    color: #000;
+  	cursor: pointer;
+    text-decoration: none;
+    transition: .2s linear color;
+  }
+  &:focus {
+    color: #333333;
+  }
+  &:active {
+    color: #2B8CBF;
+  }
+}
