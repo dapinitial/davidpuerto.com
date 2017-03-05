@@ -26,7 +26,6 @@ body {
 }
 
 html {
-  font-size: 1px;
 	-webkit-text-size-adjust: 100%;
 	-ms-text-size-adjust: 100%;
 }
@@ -35,5 +34,6 @@ body {
   background: #1a1a1a;
   color: #666;
   font-family: 'Lato', Helvetica, Arial, sans-serif;
+  font-size: 15px;
 	overflow-x: hidden;
 }
