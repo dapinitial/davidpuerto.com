@@ -1,0 +1,25 @@
+{
+  "name": "davidpuerto.com",
+  "version": "1.0.0",
+  "description": "davidpuerto.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dapinitial/davidpuerto.com.git"
+  },
+  "keywords": [
+    "davidpuerto.com"
+  ],
+  "author": "David Puerto",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dapinitial/davidpuerto.com/issues"
+  },
+  "homepage": "https://github.com/dapinitial/davidpuerto.com#readme",
+  "devDependencies": {
+    "express": "^4.15.0"
+  }
+}
