@@ -1,12 +1,16 @@
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,500,700);
+// @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,500,700);
+@import url('https://fonts.googleapis.com/css?family=Maven+Pro');
+@import url('https://fonts.google.com/specimen/Roboto?selection.family=Roboto');
 
 h1 {
+  @include fontSmoothing;
+  color: lighten(rgba(255,255,255, .5), 50%);
 	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-	font-size: 23px;
+	font-size: 56px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 500;
-	line-height: 23px;
+	line-height: 64px;
 }
 h3 {
 	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
@@ -17,12 +21,14 @@ h3 {
 	line-height: 23px;
 }
 p {
+  @include fontSmoothing;
 	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-	font-size: 14px;
+	font-size: 24px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
-	line-height: 23px;
+	line-height: 32px;
+  text-indent: 12px;
 }
 blockquote {
 	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
