@@ -1,14 +1,14 @@
-'use strict';
+'use strict'
 
-const dotenv = require('dotenv');
-const webpack = require('webpack');
-const HTMLPlugin = require('html-webpack-plugin');
-const CleanPlugin = require('clean-webpack-plugin');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const dotenv = require('dotenv')
+const webpack = require('webpack')
+const HTMLPlugin = require('html-webpack-plugin')
+const CleanPlugin = require('clean-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
-const production = process.env.NODE_ENV === 'production';
+const production = process.env.NODE_ENV === 'production'
 
-dotenv.load();
+dotenv.load()
 
 let plugins = [
   new ExtractTextPlugin('bundle.css'),
@@ -17,7 +17,7 @@ let plugins = [
     __API_URL__: JSON.stringify(process.env.API_URL),
     __DEBUG__: JSON.stringify(!production)
   })
-];
+]
 
 if (production) {
   plugins = plugins.concat([
@@ -28,8 +28,8 @@ if (production) {
       },
     }),
     new CleanPlugin()
-  ]);
-};
+  ])
+}
 
 module.exports = {
   entry: `${__dirname}/app/index.js`,
@@ -71,4 +71,4 @@ module.exports = {
       }
     ]
   }
-};
+}
