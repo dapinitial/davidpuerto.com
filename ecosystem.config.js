@@ -1,7 +1,14 @@
 module.exports = {
   apps: [{
     name: 'davidpuerto.com',
-    script: './app/build/index.js'
+    script: './app/build/index.js',
+    watch: true,
+    env: {
+      'NODE_ENV': 'development',
+    },
+    env_production : {
+       'NODE_ENV': 'production'
+    }
   }],
   deploy: {
     production: {
@@ -11,7 +18,7 @@ module.exports = {
       ref: 'origin/master',
       repo: 'git@github.com:dapinitial/davidpuerto.com.git',
       path: '/home/ec2-user/davidpuerto.com',
-      'post-deploy': 'npm install && npm run build && npm run dev && pm2 startOrRestart ecosystem.config.js'
+      'post-deploy': 'npm install; npm run build; npm run dev; pm2 startOrReload davidpuerto.com ecosystem.config.js'
     }
   }
 }
