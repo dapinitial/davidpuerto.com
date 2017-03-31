@@ -93,7 +93,7 @@
     @extend %box-shadow;
   }
   @else {
-    box-shadow: 0 6rem 6rem 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -107,8 +107,8 @@
   }
   @else {
     background: #fff;
-    border-radius: 2rem;
-    box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, .24);
+    border-radius: 2px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .24);
   }
 }
 
@@ -149,8 +149,8 @@
     background-position: bottom;
     background-size: 10px 1px;
     background-repeat: repeat-x;
-    margin-bottom: 0rem;
-    padding-bottom: 10rem;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
     &:last-of-type {
       background-image: none;
       margin-bottom: 0;
@@ -172,7 +172,7 @@
     color: #fff;
     cursor: pointer;
     display: inline-block;
-    font: normal normal normal 30rem/1 'Material-Design-Iconic-Font';
+    font: normal normal normal 30px/1 'Material-Design-Iconic-Font';
   }
 }
 

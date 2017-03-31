@@ -1,10 +1,53 @@
 // @import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,500,700);
-@import url('https://fonts.googleapis.com/css?family=Maven+Pro');
-@import url('https://fonts.google.com/specimen/Roboto?selection.family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans|Poppins:400,500');
+
+@font-face{
+    font-family: 'Fira Code';
+    src: url('../assets/fonts/FiraCode/eot/FiraCode-Light.eot');
+    src: url('../assets/fonts/FiraCode/eot/FiraCode-Light.eot') format('embedded-opentype'),
+         url('../assets/fonts/FiraCode/woff2/FiraCode-Light.woff2') format('woff2'),
+         url('../assets/fonts/FiraCode/woff/FiraCode-Light.woff') format('woff'),
+         url('../assets/fonts/FiraCode/ttf/FiraCode-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Code';
+    src: url('../assets/fonts/FiraCode/eot/FiraCode-Regular.eot');
+    src: url('../assets/fonts/FiraCode/eot/FiraCode-Regular.eot') format('embedded-opentype'),
+         url('../assets/fonts/FiraCode/woff2/FiraCode-Regular.woff2') format('woff2'),
+         url('../assets/fonts/FiraCode/woff/FiraCode-Regular.woff') format('woff'),
+         url('../assets/fonts/FiraCode/ttf/FiraCode-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Code';
+    src: url('../assets/fonts/FiraCode/eot/FiraCode-Medium.eot');
+    src: url('../assets/fonts/FiraCode/eot/FiraCode-Medium.eot') format('embedded-opentype'),
+         url('../assets/fonts/FiraCode/woff2/FiraCode-Medium.woff2') format('woff2'),
+         url('../assets/fonts/FiraCode/woff/FiraCode-Medium.woff') format('woff'),
+         url('../assets/fonts/FiraCode/ttf/FiraCode-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face{
+    font-family: 'Fira Code';
+    src: url('../assets/fonts/FiraCode/eot/FiraCode-Bold.eot');
+    src: url('../assets/fonts/FiraCode/eot/FiraCode-Bold.eot') format('embedded-opentype'),
+         url('../assets/fonts/FiraCode/woff2/FiraCode-Bold.woff2') format('woff2'),
+         url('../assets/fonts/FiraCode/woff/FiraCode-Bold.woff') format('woff'),
+         url('../assets/fonts/FiraCode/ttf/FiraCode-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
 
 h1 {
   @include fontSmoothing;
-  color: lighten(rgba(255,255,255, .5), 50%);
+  color: #272b2b;
 	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
 	font-size: 56px;
 	font-style: normal;
@@ -12,7 +55,44 @@ h1 {
 	font-weight: 500;
 	line-height: 64px;
 }
+h2 {
+  @include fontSmoothing;
+	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+	font-size: 17px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 23px;
+}
 h3 {
+  @include fontSmoothing;
+	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+	font-size: 17px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 23px;
+}
+h4 {
+  @include fontSmoothing;
+	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+	font-size: 17px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 23px;
+}
+h5 {
+  @include fontSmoothing;
+	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+	font-size: 17px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 23px;
+}
+h6 {
+  @include fontSmoothing;
 	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
 	font-size: 17px;
 	font-style: normal;
@@ -21,28 +101,42 @@ h3 {
 	line-height: 23px;
 }
 p {
-  @include fontSmoothing;
 	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-	font-size: 24px;
+  font-size: 18px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+	line-height: 24px;
+  text-indent: 6px;
+}
+blockquote {
+  font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  font-size: 24px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
 	line-height: 32px;
-  text-indent: 12px;
-}
-blockquote {
-	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-	font-size: 17px;
-	font-style: normal;
-	font-variant: normal;
-	font-weight: 400;
-	line-height: 23px;
+  text-indent: 6px;
 }
 pre {
-	font-family: "Adobe Garamond Pro", "Garamond", "Baskerville", "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-	font-size: 11px;
+	font-family: "Fira Code";
+  font-size: 14px;
 	font-style: normal;
 	font-variant: normal;
 	font-weight: 400;
-	line-height: 23px;
+	line-height: 1.5em;
+  font-feature-settings: "calt" 1;  /* Enable ligatures for IE 10+, Edge */
+  // text-rendering: optimizeLegibility; /* Force ligatures for Webkit, Blink, Gecko */
+  // width: 30em;
+  // margin: 5em auto;
+  white-space: pre-wrap;
+  word-break: break-all;
+  &.code {
+    &.light { font-weight: 300; }
+    &.regular { font-weight: 400; }
+    &.medium { font-weight: 500; }
+    &.bold { font-weight: 700; }
+    i { font-style: normal; color: #c33; }
+    b { font-weight: inherit; color: #c33; }
+  }
 }
