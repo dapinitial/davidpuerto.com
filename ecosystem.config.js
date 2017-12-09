@@ -14,7 +14,7 @@ module.exports = {
     production: {
       user: 'ubuntu',
       host: 'ec2-34-211-70-142.us-west-2.compute.amazonaws.com',
-      key: '~/home/ubuntu/.ssh/dap.pem',
+      key: '/home/ubuntu/.ssh/dap.pem',
       ref: 'origin/master',
       repo: 'git@github.com:dapinitial/davidpuerto.com.git',
       path: '/home/ubuntu/davidpuerto.com',
