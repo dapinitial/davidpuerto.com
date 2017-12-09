@@ -13,7 +13,7 @@ module.exports = {
   deploy: {
     production: {
       user: 'ubuntu',
-      host: 'ec2-34-211-70-142.us-west-2.compute.amazonaws.com',
+      host: 'ec2-35-164-139-127.us-west-2.compute.amazonaws.com',
       key: '/home/ubuntu/.ssh/dap.pem',
       ref: 'origin/master',
       repo: 'git@github.com:dapinitial/davidpuerto.com.git',

@@ -36,7 +36,7 @@ module.exports = {
   devtool: production ? false : 'eval',
   devServer: {
     host: "localhost", // Your Computer Name
-    port: 80
+    port: 8080
   },
   plugins,
   output: {
