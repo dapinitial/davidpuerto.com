@@ -1,0 +1,16 @@
+@charset "utf-8";
+/* CSS Document */
+::selection {background: #000; color:#fff; }
+::-moz-selection {background: #000; color:#fff;}
+.sliding-menu a span , .swiper-nav,  .nav-social li a:before , .page-title h3 , .project-list li a:before , .project-list li a:after ,  footer ul li a:hover , .arthref  , #list_close , .project-list ul:before  , .gallery-filters a:before , .portfolio-options.call-info   ,  .info-details , .top-title-text p ,  a.link-content , #contact-form input[type="submit"] , .contact-info a:before , .error_message , #success_page p ,.widgets-holder   , .post-tags li a , .controls button , .popup-link:before , #audio-player , #body-copyright  , .filter-button , .black-colr  ,  .back-link {
+	background: #eee;
+}
+#jpreBar {
+	background: #ccc;
+}
+.loader span {
+	background: #333;
+}
+.slides-counter li  , .mfp-counter{
+	color: rgba(255,255,255,.5);
+}
