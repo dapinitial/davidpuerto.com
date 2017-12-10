@@ -417,14 +417,14 @@ $(".filter-button").click(function() {
         return false;
     });
 
-    $('.call-menu').click(function(){
-        console.log('clicked');
-        if(!$('#btn-menu').hasClass('opened')) {
-            $('#btn-menu').addClass('opened');
-        } else {
-            $('#btn-menu').removeClass('opened');
-        }
-    });
+    // $('.call-menu').click(function(){
+    //     console.log('clicked');
+    //     if(!$('#btn-menu').hasClass('opened')) {
+    //         $('#btn-menu').addClass('opened');
+    //     } else {
+    //         $('#btn-menu').removeClass('opened');
+    //     }
+    // });
 
 	//
 }
