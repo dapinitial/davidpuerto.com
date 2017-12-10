@@ -417,16 +417,13 @@ $(".filter-button").click(function() {
         return false;
     });
 
-    // $('.call-menu').click(function(){
-    //     console.log('clicked');
-    //     if(!$('#btn-menu').hasClass('opened')) {
-    //         $('#btn-menu').addClass('opened');
-    //     } else {
-    //         $('#btn-menu').removeClass('opened');
-    //     }
-    // });
 
-	//
+    if('.nav-holder.isDown') {
+        $('#btn-menu').toggleClass('opened', true);
+    } else {
+        $('#btn-menu').toggleClass('opened', false);
+    }
+
 }
 //  detect mobile ------------------
 function initanim() {
