@@ -1,0 +1,56 @@
+.appBar
+{
+	position:fixed;
+	bottom:0px; z-index: 100;
+	width:100%; height:44px;
+	background:rgba(0,0,0,.85);
+	box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+	-moz-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+	-o-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.25);
+}
+
+.appBarBackground
+{
+	position:absolute;
+	width:100%;
+	height:100%;
+}
+
+.nowPlayingButton
+{
+	position:absolute;
+	display:block;
+	width:46px;
+	height:44px;
+}
+
+.nowPlayingButton .image
+{
+	width:80%;
+	height:100%;
+}
+
+.appBarButton
+{
+	position:absolute;
+	display:block;
+	height:44px;
+	width:44px;
+}
+
+.appBarButton .image
+{
+	position:absolute;
+	top:5px;
+	left:5px;
+	height:34px;
+	width:34px;
+}
+
+.appBarButtonContainer
+{
+	position:absolute;
+	height:100%;
+	width:100%;
+}

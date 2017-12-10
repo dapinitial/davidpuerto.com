@@ -1,0 +1,52 @@
+.nowPlayingTrayClosed
+{
+	position:absolute;
+	bottom:-340px; z-index: 150;
+	width:100%; height:333px;	
+	-webkit-transition:all 0.7s cubic-bezier(.16,.68,.43,.99);
+}
+
+.nowPlayingTrayOpen
+{
+	position:absolute;
+	bottom:40px; z-index: 150;
+	width:100%; height:333px;
+	-webkit-transition:all 0.7s cubic-bezier(.16,.68,.43,.99);
+}
+
+.nowPlayingTrayBackground
+{
+	width:320px; height:333px;
+}
+
+.nowPlayingDismissAreaDown
+{
+	position:absolute;
+	top:562px; z-index: 10;
+	width:100%; height:0px;
+}
+
+.nowPlayingDismissAreaUp
+{
+	position:absolute;
+	top:-229px; z-index: 2000 !important;
+	width:100%; height:229px;
+	background-color: rgba(0,0,0,.9);
+}	
+.nowPlayingTrayConsoleUp
+{
+	position:absolute;
+	bottom:0px; z-index: 150;
+	width:320px; height:51px;
+	background: url("../images/console_up.png") no-repeat;	
+	-webkit-transition:all 0.2s cubic-bezier(.16,.68,.43,.99);
+}
+
+.nowPlayingTrayConsoleDown
+{
+	position:absolute;
+	bottom:-51px; z-index: 150;
+	width:320px; height:51px;
+	background: url("../images/console_up.png") no-repeat;
+	-webkit-transition:all 0.2s cubic-bezier(.16,.68,.43,.99);
+}

@@ -1,0 +1,103 @@
+.hubPage
+{
+
+}
+
+.experienceShowcase
+{
+	display:block;
+	margin-bottom: 20px;
+}
+
+.experienceShowcaseBackground
+{
+	position:absolute;
+	width:100%; height:100%;
+}
+.hubButtons{
+	padding: 10px;
+}
+.smallButton
+{
+	width:92px; height:92px;
+	border: 1px solid white;
+	margin-right: 8px;
+}
+.smallButton:nth-child(3n+3)
+{
+	background: url("../images/hub_page_tv_box.png") 44% 56%;
+	margin-right: 0px;
+}
+
+.hubPage .smallButton .image
+{
+	width:100%;
+	height:100%;
+}
+
+.hubPage .largeButton
+{
+	margin-left:8px;
+	width:148px;
+	height:148px;
+	background:#777777;
+}
+
+.bottomButton
+{
+	height:50px;
+	border: 1px solid white;
+	background: url("../images/hub_page_button_box.png") 50% 50% no-repeat;
+}
+
+.hubPageBottomButton .image
+{
+	position: absolute;
+	width: 100%; height: 100%;
+}
+
+.hubPagePanel
+{
+	position:absolute;
+	background-color:transparent;
+	height: 820px;
+}
+
+.hubPagePanelAnimated
+{
+	position: absolute;
+	height: 820px;
+	-webkit-transition: all 0.7s cubic-bezier(.16,.68,.43,.99);
+}
+
+.scrollView
+{
+	position:absolute; top:0px;
+	margin:0px; padding:0px;
+	width:320px; height:370px;
+	clip:rect(0px,320px,450px,0px);
+}	
+
+#hubSlider.swipe ul li div.slide1
+{
+	background: url("../images/highres/batman.png") 0 0 / 320px auto transparent;
+	width: 100%; height: 159px;
+}
+
+#hubSlider.swipe ul li div.slide2
+{
+	background: url("../images/highres/halo.png") 0 0 / 320px auto transparent;
+	width: 100%; height: 159px;
+}
+
+#hubSlider.swipe ul lid div.slide3
+{
+	background: url("../images/highres/cartmans_graveyard.png") 0 0 / 320px auto transparent;
+	width: 100%; height: 159px;
+}
+
+#hubSlider.swipe ul li div.slide4
+{
+	background: url("../images/highres/southpark.png") 0 0 / 320px auto transparent;
+	width: 100%; height: 159px;
+}

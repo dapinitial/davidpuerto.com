@@ -1,0 +1,829 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="Pragma" content="no-cache"/>
+        <meta http-equiv="Expires" content="-1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="HandheldFriendly" content="true" />
+		<title>Prototype</title>
+
+
+		<!--<script src="js/modernizr.custom.63321.js"></script>-->
+
+
+		<link rel="stylesheet" href="css/mediaQuery.css" />
+		<link rel="stylesheet" type="text/css" href="css/style3.css" />
+		<link rel="stylesheet" type="text/css" href="css/wheelMenu.css" />
+		<link rel="stylesheet" type="text/css" href="css/layout.css" />
+		<link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
+
+
+		<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+		<script type="text/javascript" src="js/jquery.knob.js"></script>
+		
+
+		<style>
+		#wheelMenu {
+		    width:380px; height:380px; z-index: 100;
+		    -webkit-box-shadow: 0px 0px 10px rgba(0,0,0, .5);
+		    -webkit-transition-timing-function: ease;
+		    -webkit-transform:rotate3d(0,0,0,0deg);
+		    -webkit-transform-style: preserve-3d;
+		    
+		}
+		#wheel {
+			position: absolute; left: 0px; top: -1px; z-index: 1;
+		    width:375px; height:375px; 
+		    border-radius: 50%;
+		    background: url(images/wheelBackground.png) no-repeat;
+
+		    /*background:
+		    -webkit-gradient(linear, left top, right bottom, color-stop(0%,#e5e5e5), color-stop(68%,#ffffff)), 
+		    -webkit-linear-gradient(-45deg, #e5e5e5 0%,#ffffff 68%); 
+			-webkit-box-shadow: rgba(0, 0, 0, 0.239216) 1px 1px 4px inset;*/
+
+			-webkit-transition-timing-function: ease;
+		    -webkit-transform:rotate3d(0,0,0,0deg);
+		    -webkit-transform-style: preserve-3d;
+		   
+		}
+		.secondaryWheel {
+			position: absolute; z-index: 90;
+		    top: -20px; left: -490px; opacity: 0.2;
+			width:0px; height:0px; border-radius:50%;
+		    border: 3px solid rgba(255, 255, 255, 1.0);
+		    background: url(images/secondaryWheelBg.jpg) no-repeat 0px -100px;
+
+		    -webkit-box-shadow: 0px 0px 10px rgba(0,0,0, 0.5) inset;
+		    -webkit-transition:all 0.25s linear;
+		}
+		.secondaryWheel.active {
+			position: fixed; z-index: 90;
+		    top: -20px; left: -260px; opacity: 1.0;
+			width:490px; height:490px; border-radius:50%;
+		    border: 3px solid rgba(255, 255, 255, 1.0);
+		    -webkit-box-shadow: 0px 0px 10px rgba(0,0,0, 0.5) inset;
+		    -webkit-transition:all 0.05s linear;
+		}
+
+		.fauxBackground {
+			background: url(images/fauxBg.png) no-repeat center !important;
+			/*
+			-webkit-gradient(linear, left top, right bottom, color-stop(0%,#e5e5e5), color-stop(68%,#ffffff)), 
+		    -webkit-linear-gradient(-45deg, #e5e5e5 0%,#ffffff 68%)  !important; 
+		    */
+		}
+
+		#handle.secondaryControls.closed{
+			position: absolute; z-index: 110;
+	    	-webkit-transition:all 0.05s linear;
+		}
+
+		.depthBackground {
+			background: url(images/depthTicks.png) no-repeat 245px 69px,
+						url(images/secondaryWheelBg.jpg) no-repeat 0px -100px !important;
+		}
+		.depthIcon {
+			background: url(images/depthIcon.png) no-repeat;
+			position: absolute;
+			z-index: 9999;
+			top: 30px;
+			left: 10px;
+			width: 40px;
+			height: 34px;
+		}
+		.gainIcon {
+			background: url(images/gainIcon.png) no-repeat;
+			position: absolute;
+			z-index: 9999;
+			top: 85px;
+			left: 10px;
+			width: 40px;
+			height: 34px;
+		}
+
+		.ival {
+			position: absolute; left: 230px; top: 10px;
+			padding: 15px; font-size: 20px; color: rgba(0,210,255, 1.0);
+			border: 5px solid rgba(255,255,255, .15);
+			width: 130px; -webkit-box-shadow: 3px 2px 2px rgba(0,0,0,.75) inset;
+			font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+			font-weight: 400; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+			letter-spacing: 1.5px
+		}
+
+		.ival2 {
+			position: absolute; left: 230px; top: 155px;
+			padding: 15px; font-size: 20px; color: #fff600;
+			border: 5px solid rgba(255,255,255, .15);
+			width: 130px; -webkit-box-shadow: 3px 2px 2px rgba(0,0,0,.75) inset;
+			font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+			font-weight: 400; text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+		}
+		.gain {
+			visibility: visible !important;
+		}
+		.liveControlsRadio {
+    		display: none;
+		}
+		#navButtonController {
+			position: absolute; left: -210px; top: 115px;
+			z-index: 500;
+			-webkit-transition:all 0.05s linear;
+		    -webkit-transition-timing-function: ease;
+		}
+		#navButtonController.opened {
+			left: 20px;
+			-webkit-transition: all 0.1s linear 0s;
+		}
+
+		.liveControlsRadio + label {
+			-webkit-appearance: none;
+			background-color: #e9ecee;
+		    color: #99a1a7;
+		    border: 1px solid #adb8c0;
+		    box-shadow: 0 1px 2px rgba(0,0,0,0.05), 
+		    			inset 0px -15px 10px -12px rgba(0,0,0,0.05), 
+		    			inset 15px 10px -12px rgba(255,255,255,0.1), 
+		    			inset 0px 0px 10px rgba(0,0,0,0.1);
+		    padding: 9px;
+		    width: 70px;
+		    height: 70px;
+		    border-radius: 50%;
+		    display: inline-block;
+		    position: relative;
+		    font-size: 14px;
+		}
+		.liveControlsRadio:checked + label {
+		    background-color: #444; color: #fefefe;
+		    border: 1px solid #cacece;
+		    box-shadow: 0 1px 2px rgba(0,0,0,0.05), 
+		    			inset 0px 1px 3px rgba(0,0,0,0.1);
+		    background-color: #444;
+		    
+		}
+
+		#liveControlsRadio label:nth-child(2) {
+			top: 120px !important;
+		}
+		#navButtonController label span {
+			position: relative;
+			top: 19px; left: 5px;
+		}
+		.gainButton.navButton {
+			position: absolute;
+			top: 100px;
+			left: 410px;
+		}
+		.gainButton.navButton span {
+			top: 4px;
+			position: relative;
+			left: -2px;
+		}
+		.gainButton.navButton.active {
+			background: #fefefe;
+			color: rgba(0,210,255, .8);
+		}
+		.depthButton.navButton {
+			position: relative;
+			top: 210px;
+			left: 410px;
+		}
+		.depthButton.navButton span {
+			top: 5px;
+			left: -5px;
+			position: relative;
+		}
+		.depthButton.navButton.active {
+			background: #fefefe;
+			color: #fff600;
+		}
+
+		@-webkit-keyframes pulse {
+			from { -webkit-transform: none; color: rgba(0,0,0,.1);}
+			50% { -webkit-transform: scale(.5); }
+			to { -webkit-transform: none; color: rgba(255,255,255,1.0);}
+		}
+
+		.saving {
+			-webkit-animation: pulse .5s 3;
+		}
+
+		svg:not(:root), symbol, image, marker, pattern, foreignObject {
+			overflow: hidden;
+		}
+
+		.leftSideScreen {
+			width: 320px;
+		}
+		.appBar {
+			background: url(images/appBar.png) no-repeat;
+			width: 320px; height: 31px;
+		}
+		.hardwareButtons {
+			background: url(images/hardwareButtons.png) no-repeat;
+			width: 320px; height: 33px;
+			position: absolute; bottom: 0px;
+		}
+
+		.rightSideScreen {
+			
+			overflow: hidden !important;
+		}
+		.ultraSoundImageScale {
+			background: url(images/scaleIndicator.png) no-repeat left;
+			position: relative; z-index: 200;
+			left: 0px; top: 0px;
+			width: 52px; height: 720px; 
+			float: left;
+		}
+		.ultraSoundImage {
+			overflow: hidden !important; 
+			background: url(images/ultraSoundImage.png) no-repeat -140px -20px; 
+			position: relative; z-index: 100; 
+			top: -720px; left: 0px; float: left; display: inline;
+			height: 720px; width: 100%;
+		}
+
+		.utilityBar {
+			background: url(images/utilityBarImage.png) no-repeat -310px 0px;
+			width: 960px; height: 42px;
+			position: absolute; bottom: 0px; z-index: 300;
+		}
+
+		.valueIndicator, .bodyPartIndicator {
+			padding: 20px; text-align: center;
+			border: 1px solid #ccc; background: #000;
+			color: #41cde6; font-size: 48px;
+			font-family: 'BebasNeueRegular', 'Arial Narrow', Arial, sans-serif;
+			position: absolute;
+			z-index: 300;
+		}
+		.valueIndicator {
+			left: 260px; top: 130px;
+		}
+		.bodyPartIndicator {
+			right: 0px; top: 0px;
+		}
+
+		</style>
+
+	</head>
+	<body id="body" class="line">
+		<div id="wrapper" class="line">
+			<div class="unit leftSideScreen">
+				<div class="line appBar"></div>
+				<div class="line activityScreen">
+					<!-- Wheel -->
+					<section id="wheelMenu" clip-path="url(#wheelClip)">
+			            <nav id="wheel" clip-path="url(#wheelClip)">
+			 				<ul class="items active">
+								<li class="DepthControl">
+									<input  id="DepthControl" 
+											type="radio" 
+											name="resolutionRadio[]" 
+											class="radioControlGroup DepthControl" 
+											value="DepthControl" 
+									/>
+							    	<label for="DepthControl"><span>Depth</span></label>
+								</li>
+								<li class="OverallGainControl">
+									<input  id="OverallGainControl" 
+											type="radio" 
+											name="resolutionRadio[]" 
+											class="radioControlGroup OverallGainControl" 
+											value="OverallGain" 
+									/>
+							    	<label for="OverallGainControl"><span>Overall Gain</span></label>
+								</li>
+								<li class="NearGainControl">
+									<input  id="NearGainControl" 
+											type="radio" 
+											name="resolutionRadio[]" 
+											class="radioControlGroup NearGainControl" 
+											value="NearGainControl" 
+									/>
+							    	<label for="NearGainControl"><span>Near Gain</span></label>
+								</li>
+								<li class="FarGainControl">
+									<input  id="FarGainControl" 
+											type="radio" 
+											name="resolutionRadio[]" 
+											class="radioControlGroup FarGainControl" 
+											value="FarGainControl" 
+									/>
+							    	<label for="FarGainControl"><span>Far Gain</span></label>
+								</li>
+								<li class="ColorControl">
+									<input  id="ColorControl" 
+											type="radio" 
+											name="resolutionRadio[]" 
+											class="radioControlGroup ColorControl" 
+											value="ColorControl" 
+									/>
+							    	<label for="ColorControl"><span>Color</span></label>
+								</li>
+								<li class="NeedleGuideControl">
+									<input  id="NeedleGuideControl" 
+											type="radio" 
+											name="resolutionRadio[]" 
+											class="radioControlGroup NeedleGuideControl" 
+											value="NeedleGuideControl" 
+									/>
+							    	<label for="NeedleGuideControl"><span>Needle Guide</span></label>
+								</li>
+								<li class="MarkerControl">
+									<input  id="MarkerControl" 
+											type="radio" 
+											name="resolutionRadio[]" 
+											class="radioControlGroup MarkerControl" 
+											value="MarkerControl" 
+									/>
+							    	<label for="MarkerControl"><span>Marker</span></label>
+								</li>
+								<li class="OptimizeControl">
+									<input  id="OptimizeControl" 
+											type="radio" 
+											name="resolutionRadio[]" 
+											class="radioControlGroup OptimizeControl" 
+											value="OptimizeControl" 
+									/>
+							    	<label for="OptimizeControl"><span>Optimize</span></label>
+								</li>
+								<li class="SaveClipControl">
+									<input  id="SaveClipControl" 
+											type="radio" 
+											name="resolutionRadio[]" 
+											class="radioControlGroup SaveClipControl" 
+											value="SaveClipControl" 
+									/>
+							    	<label for="SaveClipControl"><span>Save Clip</span></label>
+								</li>
+								<li class="SaveImageControl">
+									<input  id="SaveImageControl" 
+											type="radio" 
+											name="resolutionRadio[]" 
+											class="radioControlGroup SaveImageControl" 
+											value="SaveImageControl" 
+									/>
+							    	<label for="SaveImageControl"><span>Save Image</span></label>
+								</li>
+								<li class="EndExamControl">
+									<input  id="EndExamControl" 
+											type="radio" 
+											name="resolutionRadio[]" 
+											class="radioControlGroup EndExamControl" 
+											value="EndExamControl" 
+									/>
+							    	<label for="EndExamControl"><span>End Exam</span></label>
+								</li>
+							</ul>
+						</nav>
+					</section>
+
+					<!-- Depth/Gain Controls -->
+
+					<section class="secondaryWheel">
+						<div style="position:relative;width:350px;margin:auto">
+			                <div class="canvasDepth hidden" style="position:absolute;left:-74px;top:-4px">
+			                   <!-- Depth Slider -->
+			                    <input 
+			                    	class="gain" 
+			                    	data-min="0" 
+			                    	data-max="8" 
+			                    	data-bgColor="rgba(255,255,255,.45)" 
+			                    	data-fgColor="rgba(0,210,255, .65)" 
+			                    	data-displayInput="false" 
+			                    	data-width="490" 
+			                    	data-height="490" 
+			                    	data-thickness=".25" 
+			                    	data-displayPrevious="false" 
+			                    	data-angleOffset="0" 
+			                    	data-angleArc="180" 
+			                    	data-lineCap="round" 
+			                    	data-step="1" 
+			                    />
+
+			                </div>
+
+							<!-- Overall Gain Slider -->
+			                <div class="canvasOverallGain hidden" style="position:absolute;left:-74px;top:-4px">
+			                    <input 
+			                    	class="depth" 
+			                    	data-min="0" 
+			                    	data-max="8" 
+			                    	data-bgColor="rgba(255,255,255,.45)" 
+			                    	data-fgColor="rgba(0,210,255, .65)" 
+			                    	data-displayInput="false" 
+			                    	data-width="490" 
+			                    	data-height="490" 
+			                    	data-thickness=".25" 
+			                    	data-displayPrevious="false" 
+			                    	data-angleOffset="0" 
+			                    	data-angleArc="180" 
+			                    	data-lineCap="round" 
+			                    	data-step="1" 
+			                    />
+			                </div>
+
+			                <!-- Near Gain -->
+			                <div class="canvasNearGain hidden" style="position:absolute;left:-74px;top:-4px">
+			                    <input 
+			                    	class="depth" 
+			                    	data-min="0" 
+			                    	data-max="8" 
+			                    	data-bgColor="rgba(255,255,255,.45)" 
+			                    	data-fgColor="rgba(0,210,255, .65)" 
+			                    	data-displayInput="false" 
+			                    	data-width="490" 
+			                    	data-height="490" 
+			                    	data-thickness=".25" 
+			                    	data-displayPrevious="false" 
+			                    	data-angleOffset="0" 
+			                    	data-angleArc="180" 
+			                    	data-lineCap="round" 
+			                    	data-step="1" 
+			                    />
+			                
+			                </div>
+
+			                <!-- Far Gain -->
+			                <div class="canvasFarGain hidden" style="position:absolute;left:-74px;top:-4px">
+			                    <input 
+			                    	class="depth" 
+			                    	data-min="0" 
+			                    	data-max="8" 
+			                    	data-bgColor="rgba(255,255,255,.45)" 
+			                    	data-fgColor="rgba(0,210,255, .65)" 
+			                    	data-displayInput="false" 
+			                    	data-width="490" 
+			                    	data-height="490" 
+			                    	data-thickness=".25" 
+			                    	data-displayPrevious="false" 
+			                    	data-angleOffset="0" 
+			                    	data-angleArc="180" 
+			                    	data-lineCap="round" 
+			                    	data-step="1" 
+			                    />
+						
+			                </div>
+			        </div>
+				</section>
+			</body>
+			</foreignObject>
+	</svg>
+
+	<!-- handle to open and close wheel menu-->
+
+	<div id="handle" class="handle closed"></div>
+
+	<!-- left / right controller -->
+	<div id="leftRight" class="leftRight">
+		<li class="leftLabel">
+			<input  id="leftLabel" 
+					type="radio" 
+					name="leftRightRadio[]" 
+					class="lrControlGroup left" 
+					value="Left" 
+			/>
+	    	<label for="leftLabel">L</label>
+		</li>
+		<li class="rightLabel">
+			<input  id="rightLabel" 
+					type="radio" 
+					name="leftRightRadio[]" 
+					class="lrControlGroup right" 
+					value="Right" 
+			/>
+	    	<label for="rightLabel">R</label>
+		</li>
+	</div>
+
+
+	<!-- SVG -->
+
+	<svg width="0" height="0">
+		<defs>
+			<clipPath id="wheelClip">
+				<ellipse cx="380" cy="380" rx="190" ry="190"/>
+			</clipPath>
+		</defs>
+	</svg>
+
+
+	<!-- start / stop controller -->
+	<div id="singleSlab" class="singleSlab hidden">
+		<li class="startStopLabel">
+			<input  id="startStopLabel" 
+					type="checkbox" 
+					name="startStopRadio[]" 
+					class="ssControlGroup left" 
+					value="StartOrStop" 
+			/>
+	    	<label for="startStopLabel">&nbsp;</label>
+		</li>
+	</div><!-- end Wheel -->
+
+				</div>
+				<div class="line hardwareButtons"></div>
+			</div>
+			<div class="lastUnit rightSideScreen">
+				<div class="ultraSoundImageScale"></div>
+				<div class="ultraSoundImage"></div>
+				<div class="line utilityBar"></div>
+			</div>
+		</div>
+
+		<div class="valueIndicator">4.3 cm</div>
+		<div class="bodyPartIndicator">P21 - Abd.</div>
+
+		<!-- Load Additional JavaScript Dependencies -->
+		
+		<script type="text/javascript" src="js/jquery.touchSwipe.js"></script>
+		<script src="js/jquery.touchy.js"></script>
+		 <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.2/jquery-ui.min.js"></script>
+        <script src="js/jquery.ui.touch-punch.min.js"></script>
+		<script type="text/javascript" src="js/buildWheelMenu.js"></script>
+
+		<!-- JavaScript Dependencies Loaded -->
+
+		<script type="text/javascript">
+
+		window.addEventListener("touchmove", function(e) {
+			e.preventDefault();
+		});
+
+		// Perfectly aligned vertically. Awesome.
+		(function ($) {
+		$.fn.vAlign = function() {
+		  return this.each(function(i){
+		    var ah = $(this).height();
+		    var ph = $("#wheel nav ul li").height();
+		    var mh = (ph - ah) / 2;
+		    
+		    if(mh>0) {
+		      $(this).css("padding-top", mh);
+		    } else {
+		    	$(this).css("padding-top", 7);
+		      }
+		    });
+		  };
+		})(jQuery);
+
+		$(document).ready(function() {
+
+			$('.radioControlGroup + label').vAlign();
+
+			/*$(function() {      
+				//Enable swiping...
+				$("#wheelMenu").swipe( {
+					//Generic swipe handler for all directions
+					swipe:function(event, direction, distance, duration, fingerCount) {
+						//console.log("You swiped " + direction );  
+
+						$(".wheelWrapper").toggleClass("opened");
+						$("#navButtonController").toggleClass("opened");
+				
+					},
+					//Default is 75px, set to 0 for demo so any distance triggers swipe
+					threshold: 75
+				});
+			});*/
+	
+			// allow radio inputs to be checked and unchecked like checkboxe inputs
+		    $("#wheel .items input:radio:checked").data("chk",true);
+			// radio buttons functioning as checkboxes logic.
+		    $("#wheel .items input:radio").click(function() {
+
+		        $("#wheel .items input[name='"+$(this).prop("name")+"']:radio").not(this).removeData("chk");
+
+		        $(this).data("chk",!$(this).data("chk"));
+
+		        $(this).prop("checked",$(this).data("chk"));
+
+		         // **** Depth & Gain Controls ****
+
+			   	if ($("#DepthControl").is(":checked")){
+			    	//console.log("DepthControl Checked");
+			    	//expand the wheel's handle
+					$("#handle").addClass("secondaryControls");	
+			    	$(".secondaryWheel").addClass("active");	
+			    	$(".secondaryWheel").addClass("depthBackground");
+			    	$(".canvasDepth").removeClass("hidden");
+			    	$(".canvasOverallGain, .canvasNearGain, .canvasFarGain").addClass("hidden");
+
+			    } else if (!$("#DepthControl").is(":checked")){
+			    	//console.log("DepthControl UNchecked");
+			    	$("#handle").removeClass("secondaryControls");	
+			    	$(".secondaryWheel").removeClass("active");	
+			    	$(".secondaryWheel").removeClass("depthBackground");
+			    	$(".canvasDepth").addClass("hidden");
+			    }
+
+			    if ($("#OverallGainControl").is(":checked")){
+			    	//expand the wheel's handle
+					$("#handle").addClass("secondaryControls");	
+			    	$(".secondaryWheel").addClass("active");	
+			    	$(".secondaryWheel").removeClass("depthBackground");
+			    	$(".canvasOverallGain").removeClass("hidden");
+			    	$(".canvasDepth, .canvasNearGain, .canvasFarGain").addClass("hidden");
+
+			    } /*else if (!$("#OverallGainControl").is(":checked")){
+					$("#handle").removeClass("secondaryControls");	
+			    	$(".secondaryWheel").removeClass("active");	
+			    	$(".secondaryWheel").removeClass("depthBackground");
+			    	$(".canvasDepth").addClass("hidden");
+			    }*/
+
+			    if ($("#NearGainControl").is(":checked")){
+			    	//expand the wheel's handle
+					$("#handle").addClass("secondaryControls");	
+			    	$(".secondaryWheel").addClass("active");	
+			    	$(".secondaryWheel").removeClass("depthBackground");
+			    	$(".canvasNearGain").removeClass("hidden");
+			    	$(".canvasDepth, .canvasOverallGain, .canvasFarGain").addClass("hidden");
+
+			    } /*else if (!$("#NearGainControl").is(":checked")){
+			    	$("#handle").removeClass("secondaryControls");	
+			    	$(".secondaryWheel").removeClass("active");	
+			    	$(".secondaryWheel").removeClass("depthBackground");
+			    	$(".canvasDepth").addClass("hidden");
+			    } */
+
+			    if ($("#FarGainControl").is(":checked")){
+			    	//expand the wheel's handle
+					$("#handle").addClass("secondaryControls");	
+			    	$(".secondaryWheel").addClass("active");	
+			    	$(".secondaryWheel").removeClass("depthBackground");
+			    	$(".canvasFarGain").removeClass("hidden");
+			    	$(".canvasDepth, .canvasOverallGain, .canvasNearGain").addClass("hidden");
+
+			    } /*else if (!$("#FarGainControl").is(":checked")){
+			    	$("#handle").removeClass("secondaryControls");	
+			    	$(".secondaryWheel").removeClass("active");	
+			    	$(".secondaryWheel").removeClass("depthBackground");
+			    	$(".canvasDepth").addClass("hidden");
+			    }*/
+/*
+				// additional syntax to deal with the styling of the touch area of the control options
+			    if ($(this).prop("checked",$(this).data("chk"))){
+			    	console.log("checked!");
+
+			    	$(this).parent("li").css("background", "cyan");
+
+			    } else if (!$(this).prop("checked",$(this).data("chk"))){
+			    	console.log("not checked!");
+
+			    	$(this).parent("li").css("background", "whitesmoke");
+			    }
+*/
+
+
+				if ($("#MarkerControl, #OptimizeControl").is(":checked")){
+			    	//console.log("DepthControl Checked");
+			    	//expand the wheel's handle
+					$("#leftRight").addClass("open");	
+
+				} else if (!$("#MarkerControl, #OptimizeControl").is(":checked")){
+			    	//console.log("DepthControl UNchecked");
+			    	$("#leftRight").removeClass("open");	
+				}
+
+				if ($("#ColorControl, #NeedleGuideControl").is(":checked")){
+			    	//console.log("DepthControl Checked");
+			    	//expand the wheel's handle
+					$("#singleSlab").removeClass("hidden").addClass("open");	
+
+				} else if (!$("#ColorControl, #NeedleGuideControl").is(":checked")){
+			    	//console.log("DepthControl UNchecked");
+			    	$("#singleSlab").removeClass("open").addClass("hidden");	
+				}
+
+		    });
+
+			$(".SaveImageControl input + label, .SaveClipControl input + label, .EndExamControl input + label").on("click", function(){
+				$(this).addClass("saving");
+				that = this;
+				setTimeout(function() {
+			        $(that).removeClass("saving");
+			    }, 2500);
+			     $(this).removeAttr('checked');
+			});
+		    
+		    // initialize the interface with depth and gain hidden.
+			//$(".canvasGain, .canvasDepth").addClass("hidden");
+
+			// click events to show and hide the controls
+			$(".gainButton").on("click", function(){
+
+				$("#wheel").toggleClass("gainBackground");
+
+				$(".gainButton").toggleClass("active");
+				$(".depthButton").removeClass("active");
+
+				$(".canvasDepth").addClass("hidden");
+				$(".canvasGain").toggleClass("hidden");
+
+			});
+
+			$(".depthButton").on("click", function(){
+
+				$("#wheel").removeClass("gainBackground");
+
+				$(".gainButton").removeClass("active");
+				$(".depthButton").toggleClass("active");
+
+				$(".canvasGain").addClass("hidden");
+				$(".canvasDepth").toggleClass("hidden");
+				
+			});
+
+			$("div.ival, div.ival2").hide();
+		
+            $(function(){
+
+                $("input.gain").knob({
+
+                    change : function (value) {
+                        console.log("change : " + value);
+						$("#wheelMenu").swipe("disable");
+                        $("div.ival").html("Depth: " + value).fadeIn("700");
+                    },
+                    release : function (value) {
+                        //console.log(this.$.attr('value'));
+                        console.log("release : " + value);
+						$("#wheelMenu").swipe("enable");
+						
+                 
+                    },
+                    cancel : function () {
+                        console.log("cancel : ", this);
+                    }
+				});
+
+				$("input.depth").knob({
+                    change : function (value) {
+                        console.log("change : " + value);
+						$("#wheelMenu").swipe("disable");
+                        //$("div.ival2").html("Depth: " + value).fadeIn("700");
+                    },
+                    release : function (value) {
+                        console.log(this.$.attr('value'));
+                        console.log("release : " + value);
+						$("#wheelMenu").swipe("enable");
+                    },
+                    cancel : function () {
+                        console.log("cancel : ", this);
+                 		//event.stopPropagation();
+                    }
+				});
+			});
+			
+			// toggle class button arrays 2+ states
+
+			$('.hdrOff, .hdrOn').click(function() {                             
+			    this.className = {
+			       hdrOff : 'hdrOn', hdrOn: 'hdrOff'
+			    }[this.className];
+			});
+
+			$('.panoramaOff, .panoramaOn').click(function() {                             
+			    this.className = {
+			       panoramaOff : 'panoramaOn', panoramaOn: 'panoramaOff'
+			    }[this.className];
+			});
+
+			$('.continuousShootingOff, .continuousShootingOn').click(function() {                             
+			    this.className = {
+			       continuousShootingOff : 'continuousShootingOn', continuousShootingOn: 'continuousShootingOff'
+			    }[this.className];
+			});
+
+			$('.dropBoxOff, .dropBoxOn').click(function() {                             
+			    this.className = {
+			       dropBoxOff : 'dropBoxOn', dropBoxOn: 'dropBoxOff'
+			    }[this.className];
+			});
+
+			$('.flashOff, .flashOn, .flashAuto').click(function() {                             
+			    this.className = {
+			       flashAuto : 'flashOff', flashOff: 'flashOn', flashOn: 'flashAuto'
+			    }[this.className];
+			});
+
+
+			var handleTouchyPinch = function (e, $target, data) {
+			    $target.css({'webkitTransform':'scale(' + data.scale + ',' + data.scale + ')'});
+			};
+
+			$('.ultraSoundImage').bind('touchy-pinch', handleTouchyPinch);
+		
+		});
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,303 @@
+#navigationDrawerScrollView
+{
+	position:absolute; 
+	width: 163px; height: 480px;
+}
+ #navigationDrawerPanel
+ {
+ 	position: absolute;
+ 	width: 100%; height: 480px;
+ }
+
+.navigationDrawerSwiping
+{
+	position:fixed; 
+	width:163px; height:100%;
+	background: rgba(0,0,0,1.0);
+}
+
+.navigationDrawerClosed
+{
+	position:fixed; left:-163px;
+	width:163px; height:100%;
+	background: rgba(0,0,0,1.0);
+	-webkit-transition:all 0.2s cubic-bezier(.16,.68,.43,.99);
+}
+
+.navigationDrawerOpen
+{
+	position:fixed; left:0px;
+	width:163px; height:100%;
+	background: rgba(0, 0, 0, 1.0);
+	-webkit-transition:all 0.2s cubic-bezier(.16,.68,.43,.99);
+}
+
+.navigationDrawerButton
+{
+	position:absolute;
+	top:69px;
+	width:69px; height:69px;
+}
+
+/************* NavigationDrawer Scroll View **************/
+
+#navigationDrawerScrollView
+{
+	position:absolute;
+	margin:0px;
+	padding:0px;
+	width:163px;
+	height:542px;
+	clip:rect(0px,163px,542px,0px);
+}	
+
+#navigationDrawerPanel, .navigationDrawerPanel
+{
+	position:absolute;
+	background-color:transparent;
+	height:700px;
+}
+
+#navigationDrawerPanelAnimated, .navigationDrawerPanelAnimated
+{
+	position:absolute;
+	background-color:transparent;
+	height:700px;
+	-webkit-transition:all 0.7s cubic-bezier(.16,.68,.43,.99);
+	-ms-transition:all 0.7s cubic-bezier(.16,.68,.43,.99);
+}
+/************* NavigationDrawer with a defaultSkin layout **************/
+ul.defaultSkin
+{
+	background: #cfcfcf;
+}
+
+ul.defaultSkin > *
+{
+	-webkit-transform:translate3d(0,0,0);
+}
+
+ul.defaultSkin li
+{
+
+}
+
+ul.defaultSkin li.active
+{
+	/*background: url("../images/liactivebutton.png") repeat-x;*/
+}
+
+ul.defaultSkin li a
+{
+	width: 100%; height: 48px;
+	display: block;
+	text-decoration: none;
+	font: 18px white "SegoeUI";
+}
+
+ul.defaultSkin li.active a
+{
+	color: #fff;
+}
+
+ul.defaultSkin .home
+{
+	background: rgba(255, 255, 255, .2);
+}
+ul.defaultSkin .avatar
+{
+	background: rgba(0, 0, 0, .2);
+}
+ul.defaultSkin .utilities
+{
+	background: rgba(0, 0, 0, .1);
+}
+
+nav.menuBar{
+	background: #3a3b3c;
+	margin-top: -3px;
+	border-bottom: 2px solid black;
+	border-top: 1px solid black;
+}
+
+nav.menuBar > div.email {
+	background: url("../images/highres/menubar.png") no-repeat scroll -4px 0px;
+	background-size: 175px;
+	height: 52px;
+}
+
+nav.menuBar > div.recent {
+	background: url("../images/highres/menubar.png") no-repeat -59px 0px;
+	background-size: 175px;
+	height: 52px;
+
+}
+
+nav.menuBar > div.pinned {
+	background: url("../images/highres/menubar.png") no-repeat -116px 0px;
+	background-size: 175px;
+	height: 52px;
+}
+
+ul.defaultSkin li.home a
+{
+	background: url("../images/highres/drawer_home.png") no-repeat scroll 0 0;
+	background-size: 200px;
+	width: 100%; height: 48px;
+}
+
+ul.defaultSkin li.games a
+{
+	background: url("../images/highres/drawer_games.png") no-repeat scroll 0 0;
+	background-size: 200px;
+	width: 100%; 
+}
+
+ul.defaultSkin li.video a
+{
+	background: url("../images/highres/drawer_video.png") no-repeat scroll 0 0;
+	background-size: 200px;
+	width: 100%; 
+}
+
+ul.defaultSkin li.music a
+{
+	background: url("../images/highres/drawer_music.png") no-repeat scroll 0 0;
+	background-size: 200px;
+	width: 100%; 
+}
+
+ul.defaultSkin li.tv a
+{
+	background: url("../images/highres/drawer_tv.png") no-repeat scroll 0 0;
+	background-size: 200px;
+}
+
+ul.defaultSkin li.settings a
+{
+	background: url("../images/highres/drawer_settings.png") no-repeat scroll 0 0;
+	background-size: 200px;
+	width: 100%; 
+}
+
+ul.defaultSkin li.help a
+{
+	background: url("../images/highres/drawer_help.png") no-repeat scroll 0 0;
+	background-size: 200px;
+	width: 100%; 
+}
+
+/*************  ANOTHER STYLE *************/
+/*  Drawer Sprite waiting on better images*/
+/************* 
+ul.defaultSkin li.home a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 18px -1px transparent;
+}
+ul.defaultSkin li.games a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 18px -283px transparent;
+}
+ul.defaultSkin li.video a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 18px -75px transparent;
+}
+ul.defaultSkin li.music a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 18px -111px transparent;
+}
+ul.defaultSkin li.tv a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 18px -147px transparent;
+}
+ul.defaultSkin li.settings a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 18px -185px transparent;
+}
+ul.defaultSkin li.help a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 18px -225px transparent;
+}
+ ANOTHER STYLE *************/
+
+/*************  ANOTHER STYLE *************/
+/*  Drawer Sprite waiting on better images
+/*************  ANOTHER STYLE *************/
+/*
+ul.defaultSkin li.home a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 0 3px transparent;
+}
+ul.defaultSkin li.profile a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 0 -47px transparent;
+}
+ul.defaultSkin li.inbox a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 0 -90px transparent;
+}
+ul.defaultSkin li.recents a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 0 -119px transparent;
+}
+ul.defaultSkin li.pins a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 0 -151px transparent;
+}
+ul.defaultSkin li.tv a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 0 -199px transparent;
+}
+ul.defaultSkin li.video a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 0 -242px transparent;
+}
+ul.defaultSkin li.games a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 0 -285px transparent;
+}
+ul.defaultSkin li.music a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 0 -329px transparent;
+}
+ul.defaultSkin li.remote a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 0 -372px transparent;
+}
+ul.defaultSkin li.settings a
+{
+	background: url("../images/navdrawersprite.png") no-repeat scroll 0 -426px transparent;
+}*/
+/************* NavigationDrawer with a two columns layout **************/
+ul.twoColumns
+{
+	background: rgb(255,255,255,1.0);
+	width: 100%; padding: 5px;
+}
+ul.twoColumns > * 
+{
+	-webkit-transform:translate3d(0,0,0);
+}
+
+ul.twoColumns li
+{
+	width: 45%; float: left;
+	background-color: #dadada;
+	border: 1px solid #fff;
+}
+
+ul.twoColumns li:nth-child(1n)
+{
+	margin: 0 2px 4px;
+}
+
+ul.twoColumns li:nth-child(2n)
+{
+	margin-bottom: 4px;
+}
+
+ul.twoColumns li a{
+	padding: 50px 25px; display: block;
+	text-align: center;
+}
+/************* NavigationDrawer with a two columns layout **************/

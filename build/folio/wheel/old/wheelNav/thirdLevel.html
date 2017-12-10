@@ -1,0 +1,73 @@
+<div id="ex-full-spinopen3" class="wheelMenuNav">
+    <ul class="menu" id="menu3">
+        <li><span>&nbsp;</span></li>
+        <li goTo="thirdLevel" ref="!"><span>DONE</span></li>
+        <li goTo="thirdLevel" ref="!"><span>DONE</span></li>
+        <li goTo="thirdLevel" ref="!"><span>DONE</span></li>
+        <li goTo="thirdLevel" ref="!"><span>DONE</span></li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+ $(function(){
+   
+        $('#menu3').circleMenu({
+            direction:'full',
+            open: function(){
+                console.log('THIRD LEVEL menu opened');
+                /*$('.menu li:first-child').css('position', 'fixed');
+                $('.menu li:first-child').css('top', '2px');
+                $('.menu li:first-child').css('left', '2px');*/
+            },
+            close: function(){
+                console.log('THIRD LEVEL menu closed');
+                /*$('.menu li:first-child').css('position', 'fixed');
+                $('.menu li:first-child').css('top', '2' + px);
+                $('.menu li:first-child').css('left', '2' + px);*/
+            },
+            init: function(){
+                console.log('THIRD LEVEL menu initialized');},
+            select: function(evt,index){
+                console.log(evt,index);
+            },
+            circle_radius: 160,
+            step_in:0, 
+            step_out:0
+        }).on('circleMenu-open',function(){
+            console.log('THIRD LEVEL menu CLOSURE');});
+        
+        $('a').on('click',function(evt){
+            if($(this).attr('href')==='#'){
+                evt.preventDefault();
+            }
+        });
+        // start with the menu open
+        $('#menu3').circleMenu('open');
+    });
+$(document).ready(function(){
+   
+// handle menu clicks:
+    $("#menu3 li").on("click", function(e){
+       
+        e.preventDefault();
+
+        var goTo = $(this).attr("goTo");
+        var ref = $(this).attr("ref");
+
+        console.log("You've clicked on: " + " " + ref);
+        $("#backButton").html(ref);
+
+// handle back button:
+    $("#backButton").on("click", function(e){
+        e.preventDefault();
+        $("#wheel").load("wheelNav/secondLevel.html").fadeIn();
+
+
+
+    });
+
+
+        return false;
+    });
+});
+</script>

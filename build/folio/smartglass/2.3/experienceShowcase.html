@@ -1,0 +1,21 @@
+<div id="slider" class="swipe">
+	<ul>
+        <li style="display:block"><div><h1>1</h1></div></li>
+        <li style="display:none"><div><h1>2</h1></div></li>
+        <li style="display:none"><div><h1>3</h1></div></li>
+        <li style="display:none"><div><h1>4</h1></div></li>
+        <li style="display:none"><div><h1>5</h1></div></li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+var slider = new Slider(document.getElementById('slider'), {
+	callback: function(e) {
+		if (!this.index && this.deltaX > 0 || this.index == this.length - 1 && this.deltaX < 0;){
+			navigationDrawer.open();
+		} else {
+			navigationDrawer.close();
+		}
+	}
+});
+</script>

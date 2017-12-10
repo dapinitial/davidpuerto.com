@@ -1,0 +1,63 @@
+.utilityBar
+{
+	position:fixed; z-index: 100;
+	width:100%; height:47px;
+	padding: 5px;
+	/*background: url("../images/utility_bar_background.png") no-repeat 40px -10px #000;*/
+
+}
+
+.utilityBarBackground
+{
+	position:absolute;
+	width:100%;
+}
+
+.utilityBarBackgroundHidden
+{
+	position:absolute;
+	opacity:0;
+}
+
+.utilityBarDrawerButton
+{
+	float: left;
+	display:block;
+	width:45px; height:45px;
+}
+
+.utilityBarDrawerButton .image
+{
+	width:34px; height:34px;
+	float:left;
+}
+
+.utilityBarSecondDrawerButton
+{
+	position:absolute;
+	display:block;
+	width:47px; height:47px;
+	left:267px; top:4px;
+}
+
+.utilityBarSecondDrawerButton .image
+{
+	position:absolute;
+	width:34px; height:34px;
+	left:5px; top:5px;
+}
+.utilityBarDrawerButtonSlim, #utilityBar div.button
+{
+	float: left;
+	display: block;
+	margin-right: 3px;
+}
+div.utilityBarDrawerButtonSlim > img, div.button img.homeButtonSlim, div.button img.image, .utilityBarDrawerButtonSlim .image, .utilityBarDrawerButtonSlim img.homeButtonSlim
+{
+	width:18px; height:34px;
+	float:left;
+}
+.utilityBarDrawerButtonSlim img.homeButtonSlimHidden, .utilityBarDrawerButtonSlimHidden
+{
+	display:none;
+}

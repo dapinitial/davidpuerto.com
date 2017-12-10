@@ -1,0 +1,26 @@
+.navigationDrawerSwiping
+{
+	position:fixed;
+	width:163px; height:100%;
+}
+
+.navigationDrawerClosed
+{
+	position:fixed; left:-163px;
+	width:163px; height:100%;
+	-webkit-transition:all 0.2s cubic-bezier(.16,.68,.43,.99);
+}
+
+.navigationDrawerOpen
+{
+	position:fixed; left:0px;
+	width:163px; height:100%;
+	-webkit-transition:all 0.2s cubic-bezier(.16,.68,.43,.99);
+}
+
+.navigationDrawerButton
+{
+	position:absolute;
+	top:69px;
+	width:69px; height:69px;
+}
