@@ -222,6 +222,7 @@ function initPuertofolio() {
 initIsotope();
 
 $(window).load(function() {
+  $('.btn-menu').removeClass('opened',);
   initIsotope();
         //=============== header animation  ==============
         $(window).scroll(function() {
@@ -417,13 +418,19 @@ $(".filter-button").click(function() {
         return false;
     });
 
-
-    if('.nav-holder.isDown') {
-        $('#btn-menu').toggleClass('opened', true);
-    } else {
-        $('#btn-menu').toggleClass('opened', false);
+    if($('.nav-holder.isDown')) {
+        
     }
 
+    $('.call-menu').click(function(){
+        if($('.nav-holder.isDown')) {
+            $('.btn-menu').toggleClass('opened', true);
+        } else {
+            $('.btn-menu').toggleClass('opened', false);
+        }
+    });
+
+	
 }
 //  detect mobile ------------------
 function initanim() {
