@@ -419,7 +419,12 @@ $(".filter-button").click(function() {
     });
 
     if($('.nav-holder.isDown')) {
+        $('.btn-menu').toggleClass('opened', true);
         
+    }
+
+    if(!$('.nav-holder.isDown')) {
+        $('.btn-menu').toggleClass('opened', false);
     }
 
     $('.call-menu').click(function(){
