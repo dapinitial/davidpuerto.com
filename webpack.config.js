@@ -59,11 +59,11 @@ module.exports = {
       },
       {
         test: /\.(woff|tt|svg|eot).*/,
-        loader: 'url?limit=10000&name=image/[hash].[ext]'
+        loader: 'url?limit=10000&name=fonts/[hash].[ext]'
       },
       {
-        test: /\.(jpg|jpeg|svg|bmp|tiff|gif|png)$/,
-        loader: 'url?limit=10000&name=image/[hash].[ext]'
+        test: /\.(jpg|jpeg|svg|bmp|tiff|gif|png|ico)$/,
+        loader: 'url?limit=10000&name=images/[hash].[ext]'
       },
       {
         test: /\.scss$/,
