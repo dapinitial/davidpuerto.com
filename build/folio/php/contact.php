@@ -26,7 +26,7 @@ if(trim($name) == '') {
 } else if(trim($comments) == '') {
 	echo '<div class="error_message">Enter your message.</div>';
 	exit();
-} 
+}
 
 if(get_magic_quotes_gpc()) {
 	$comments = stripslashes($comments);
@@ -37,7 +37,6 @@ if(get_magic_quotes_gpc()) {
 // Enter the email address that you want to emails to be sent to.
 // Example $address = "joe.doe@yourdomain.com";
 
-//$address = "example@themeforest.net";
 $address = "me@davidpuerto.com";
 
 
@@ -73,7 +72,7 @@ if(mail($address, $e_subject, $msg, $headers)) {
 	echo "<fieldset>";
 	echo "<div id='success_page'>";
 	echo "<h3>Email Sent Successfully.</h3>";
-	echo "<p>Thank you <strong>$name</strong>, your message has been sent to David.</p>";
+	echo "<p>Thank you <strong>$name</strong>, your message has been submitted to me.</p>";
 	echo "</div>";
 	echo "</fieldset>";
 
