@@ -12,7 +12,7 @@ dotenv.load();
 
 let plugins = [
   new ExtractTextPlugin('bundle.css'),
-  new HTMLPlugin({ template: `${__dirname}/app/index.html` }),
+  new HTMLPlugin({template: `${__dirname}/app/index.html`}),
   new webpack.DefinePlugin({
     __API_URL__: JSON.stringify(process.env.API_URL),
     __DEBUG__: JSON.stringify(!production)
@@ -21,19 +21,23 @@ let plugins = [
 
 if (production) {
   plugins = plugins.concat([
-    new webpack.optimize.UglifyJsPlugin({
-      mangle: true,
-      compress: {
-        warnings: false
-      },
-    }),
-    new CleanPlugin();
+    new webpack
+      .optimize
+      .UglifyJsPlugin({
+        mangle: true,
+        compress: {
+          warnings: false
+        }
+      }),
+    new CleanPlugin()
   ])
 }
 
 module.exports = {
   entry: `${__dirname}/app/index.js`,
-  devtool: production ? false : 'eval',
+  devtool: production
+    ? false
+    : 'eval',
   devServer: {
     host: "localhost", // Your Computer Name
     port: 8080
@@ -52,20 +56,16 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: 'babel'
-      },
-      {
+      }, {
         test: /\.html$/,
         loader: 'html'
-      },
-      {
+      }, {
         test: /\.(woff|tt|svg|eot).*/,
         loader: 'url?limit=10000&name=fonts/[hash].[ext]'
-      },
-      {
+      }, {
         test: /\.(jpg|jpeg|svg|bmp|tiff|gif|png|ico)$/,
         loader: 'url?limit=10000&name=images/[hash].[ext]'
-      },
-      {
+      }, {
         test: /\.scss$/,
         loader: ExtractTextPlugin.extract('style', 'css!resolve-url!sass?sourceMap')
       }
