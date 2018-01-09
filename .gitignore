@@ -81,6 +81,7 @@ coverage
 
 # Compiled binary addons (http://nodejs.org/api/addons.html)
 build/Release
+build/googlec7d7ba2df27f1d34.html
 
 # Dependency directories
 node_modules
@@ -119,3 +120,6 @@ jspm_packages
 
 # End of https://www.gitignore.io/api/macos,windows,git,node,linux
 db/
+
+# Environment variables with .env packacge
+*.env
