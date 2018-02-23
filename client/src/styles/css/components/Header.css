@@ -1,0 +1,132 @@
+.header {
+  background: #191919;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 40%;
+  height: 70px;
+  z-index: 9999;
+  transform: translate3d(0, 0, 0); }
+
+.logo-holder {
+  background: #FF4400;
+  float: left;
+  max-width: 240px;
+  height: 70px;
+  position: relative;
+  padding: 0 30px;
+  line-height: 70px; }
+
+.nav-button {
+  position: absolute;
+  top: 25px;
+  right: 16px;
+  z-index: 21;
+  width: 30px;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  font-size: 24px; }
+
+.nav-button span:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  z-index: 1;
+  transition: all 0.2s ease-in-out; }
+
+.nav-button:hover span:before {
+  width: 100%; }
+
+.nav-button {
+  position: absolute;
+  top: 25px;
+  right: 16px;
+  z-index: 21;
+  width: 30px;
+  height: 40px;
+  line-height: 40px;
+  cursor: pointer;
+  font-size: 24px; }
+
+.nav-button:before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -20px;
+  background: #292929;
+  width: 2px;
+  height: 100%; }
+
+.nav-button span {
+  width: 100%;
+  float: left;
+  margin-bottom: 5px;
+  height: 3px;
+  background: #fff;
+  position: relative;
+  transition: all 0.2s ease-in-out; }
+
+.nav-button.cmenu .nbs {
+  opacity: 0; }
+
+.nav-button.cmenu .nos {
+  transform: rotate(-45deg);
+  margin-bottom: 0;
+  top: 9px; }
+
+.nav-button.cmenu .ncs {
+  transform: rotate(45deg);
+  margin-bottom: 0;
+  top: 6px; }
+
+.nav-decor {
+  position: absolute;
+  z-index: 2;
+  width: 50px;
+  height: 50px; }
+
+.nav-decor:before,
+.nav-decor:after {
+  content: '';
+  position: absolute;
+  background: rgba(255, 255, 255, 0.51); }
+
+.nav-decor-tl {
+  left: 50px;
+  top: 100px; }
+
+.nav-decor-tl:before,
+.nav-decor-tl:after {
+  left: 0;
+  top: 0; }
+
+.nav-decor-tl:before {
+  height: 2px;
+  width: 50px;
+  left: 2px; }
+
+.nav-decor-tl:after {
+  height: 50px;
+  width: 2px; }
+
+.nav-decor-br {
+  right: 50px;
+  bottom: 50px; }
+
+.nav-decor-br:before,
+.nav-decor-br:after {
+  right: 0;
+  bottom: 0; }
+
+.nav-decor-br:before {
+  height: 2px;
+  width: 50px;
+  right: 2px; }
+
+.nav-decor-br:after {
+  height: 50px;
+  width: 2px; }

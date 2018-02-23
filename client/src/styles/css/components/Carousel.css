@@ -1,0 +1,45 @@
+.owl-carousel.owl-loaded {
+  display: grid !important; }
+
+.owl-stage {
+  margin-bottom: 20px; }
+
+.item {
+  float: left;
+  width: 100%;
+  padding: 20px; }
+  .item img {
+    width: auto;
+    display: block;
+    margin-bottom: 16px; }
+  .item h3 {
+    color: #000;
+    font-size: 20px;
+    margin-bottom: 16px; }
+  .item p {
+    margin-bottom: 16px; }
+  .item::before, .item::after {
+    background: #FF4400;
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 2; }
+  .item::before {
+    width: 4px;
+    height: 50px; }
+  .item::after {
+    width: 50px;
+    height: 4px;
+    margin-left: 10px; }
+
+.owl-prev,
+.owl-next {
+  color: #fff;
+  background: #FF4400;
+  font-size: 18px;
+  float: left;
+  padding: 6px 12px; }
+
+.owl-next {
+  float: right; }

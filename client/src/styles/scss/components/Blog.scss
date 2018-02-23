@@ -1,0 +1,10 @@
+#blog-dap {
+    .container {
+        @include tablet {
+            padding: 100px 20px 0px 20px;
+        }
+        @include mobile {
+            padding: 100px 20px 0px 20px;
+        }
+    }
+}

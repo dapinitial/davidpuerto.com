@@ -1,0 +1,26 @@
+.welcomeBackground {
+  background-color: #048BA8;
+  position: absolute;
+  width: 100%;
+  height: 100%; }
+
+.welcomeLayer {
+  background: #048BA8;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1000px; }
+
+.welcomeText {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  top: 35%;
+  width: 100%;
+  text-align: center;
+  font-size: 3rem;
+  color: #ffffff;
+  font-weight: bold; }

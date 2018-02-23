@@ -1,0 +1,52 @@
+/*
+ *
+ *		STYLE.CSS
+ *
+ *	+ TYPOGRAPHY
+ *  + HEADLINE
+ *	+ ALERTS
+ *	+ LISTS
+ *	+ BUTTONS
+ *  + CONTACT FORM
+ *	+ NEWSLETTER
+ *	+ GOOGLE MAPS
+ *  + SOCIAL MEDIA
+ *	+ SERVICES BOXES
+ *	+ PIE CHARTS
+ *	+ PROGRESS BARS
+ *  + COUNTER
+ *	+ COUNTDOWN
+ *	+ PRICE PLAN
+ *  + FULL SECTIONS
+ *  + VIDEO PLAYER
+ *	+ SECTIONS & PATTERNS
+ *  + GO TOP
+ *	+ ANIMATIONS
+ *	+ FOOTER
+ *  + RESPONSIVE
+ *	 - LARGE DISPLAY (>1200px)
+ *	 - SMALL DISPLAY (TABLETS)
+ *	 - EXTRA SMALL DISPLAY (PHONES PORTRAIT)
+ *	 - EXTRA SMALL DISPLAY (PHONES LANDSCAPE)
+ *	+ SECTIONS & PATTERNS FOR SMALL DISPLAY
+ */
+
+@import 'reset';
+@import 'boilerplate';
+@import 'color';
+@import 'buttons';
+@import './components/Loader';
+@import './components/Flip';
+@import './components/About';
+@import './components/Accordion';
+@import './components/Carousel';
+@import './components/Contact';
+@import './components/Blog';
+@import './components/Folio';
+@import './components/Clock';
+@import './components/Home';
+@import './components/Header';
+@import './components/HeaderNav';
+@import './components/HeroTitle';
+@import './components/SectionTitle';
+@import './components/Footer';

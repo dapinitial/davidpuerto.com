@@ -1,0 +1,56 @@
+/* ---------Button--------------------------------------*/
+.btn {
+  float: left;
+  margin-top: 10px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-right: 10px;
+  text-align: center;
+  width: auto;
+  letter-spacing: normal;
+  position: relative;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  vertical-align: middle;
+  max-width: 100%;
+  overflow: hidden;
+  background: #FF4400;
+  outline: none;
+  padding: 13px 20px;
+  display: inline-block; }
+
+.btn i {
+  padding-right: 10px;
+  font-size: 18px;
+  background: #414146;
+  padding: 14px 20px;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  transition: all 200ms linear; }
+
+.btn.hide-icon span {
+  padding: 0 33px;
+  transition: all 500ms linear;
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
+  text-transform: uppercase; }
+
+.btn.hide-icon i {
+  padding: 11px 20px 10px;
+  left: -60px;
+  height: 100%;
+  line-height: 25px;
+  display: inline-block;
+  position: absolute;
+  color: #fff !important;
+  top: 0; }
+
+.btn.hide-icon:hover i {
+  left: 0; }
+
+.btn.hide-icon:hover span {
+  padding-left: 59px;
+  padding-right: 11px; }

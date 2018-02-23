@@ -1,0 +1,676 @@
+*,
+*:after,
+*:before {
+    box-sizing: border-box;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Lato:400|Oswald:500,700');
+$sm-width: 0px;
+$mobile-width: 320px;
+$tablet-width: 768px;
+$desktop-width: 769px;
+@mixin mobile {
+    @media (min-width: #{$sm-width}) and (max-width: #{$mobile-width}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$mobile-width}) and (max-width: #{$tablet-width}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+// end breakpoints/media queries. EASIER MAINTAINENCE!!!
+//  @include any of these mixins and allow the placeholders to group similar types of CSS rules together that way we don't have a lot of bloat! We can create more as we need them. Let's communicate each and every need to ensure that we keep this lightweight!
+@mixin fontSmoothing($value: antialiased) {
+    @if $value==antialiased {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        text-rendering: optimizeLegibility;
+    }
+    @else {
+        -webkit-font-smoothing: subpixel-antialiased;
+        -moz-osx-font-smoothing: auto;
+    }
+}
+
+@mixin line($extend: true) {
+    @if $extend {
+        @extend %line;
+    }
+    @else {
+        &:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    }
+}
+
+%line {
+    @include line($extend: false);
+}
+
+@mixin center-vertical($extend: true) {
+    @if $extend {
+        @extend %center-vertical;
+    }
+    @else {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+%center-vertical {
+    @include center-vertical($extend: false);
+}
+
+@mixin lastUnit($extend: true) {
+    @if $extend {
+        @extend %lastUnit;
+    }
+    @else {
+        float: none;
+        display: block;
+        display: table-cell;
+        vertical-align: top;
+        width: 9999em;
+        &:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    }
+}
+
+%lastUnit {
+    @include lastUnit($extend: false);
+}
+
+@mixin unit($extend: true) {
+    @if $extend {
+        @extend %unit;
+    }
+    @else {
+        display: inline-block;
+        float: left;
+    }
+}
+
+%unit {
+    @include unit($extend: false);
+}
+
+@mixin unit1of1($extend: false) {
+    @if $extend {
+        @extend %unit1of1;
+    }
+    @else {
+        display: inline-block;
+        float: left;
+        width: 100%;
+    }
+}
+
+%unit1of1 {
+    @include unit1of1($extend: false);
+}
+
+@mixin unit1of2($extend: false) {
+    @if $extend {
+        @extend %unit1of2;
+    }
+    @else {
+        display: inline-block;
+        float: left;
+        width: 50%;
+    }
+}
+
+%unit1of2 {
+    @include unit1of2($extend: false);
+}
+
+@mixin unit1of3($extend: false) {
+    @if $extend {
+        @extend %unit1of3;
+    }
+    @else {
+        display: inline-block;
+        float: left;
+        width: 33.3%;
+    }
+}
+
+%unit1of3 {
+    @include unit1of3($extend: false);
+}
+
+@mixin unit1of4($extend: false) {
+    @if $extend {
+        @extend %unit1of4;
+    }
+    @else {
+        display: inline-block;
+        float: left;
+        width: 25%;
+    }
+}
+
+%unit1of4 {
+    @include unit1of4($extend: false);
+}
+
+@mixin unit1of5($extend: false) {
+    @if $extend {
+        @extend %unit1of5;
+    }
+    @else {
+        display: inline-block;
+        float: left;
+        width: 20%;
+    }
+}
+
+%unit1of5 {
+    @include unit1of5($extend: false);
+}
+
+@mixin unit1of6($extend: false) {
+    @if $extend {
+        @extend %unit1of6;
+    }
+    @else {
+        display: inline-block;
+        float: left;
+        width: 16.67%;
+    }
+}
+
+%unit1of6 {
+    @include unit1of6($extend: false);
+}
+
+@mixin unitRight($extend: true) {
+    @if $extend {
+        @extend %unitRight;
+    }
+    @else {
+        float: right;
+    }
+}
+
+%unitRight {
+    @include unitRight($extend: false);
+}
+
+@mixin box-shadow($extend: true) {
+    @if $extend {
+        @extend %box-shadow;
+    }
+    @else {
+        box-shadow: 0 6rem 6rem 0 rgba(0, 0, 0, 0.05);
+    }
+}
+
+%box-shadow {
+    @include box-shadow($extend: false);
+}
+
+@mixin card($extend: false) {
+    @if $extend {
+        @extend %card;
+    }
+    @else {
+        background: #fff;
+        border-radius: 2rem;
+        box-shadow: 0 1rem 2rem 0 rgba(0, 0, 0, .24);
+    }
+}
+
+%card {
+    @include card($extend: false);
+}
+
+@mixin scrolling($extend: true) {
+    @if $extend {
+        @extend %scrolling;
+    }
+    @else {
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: none;
+        scrollbar-base-color: #333;
+        scrollbar-3dlight-color: #3e3e3e;
+        scrollbar-highlight-color: #4e4e4e;
+        scrollbar-track-color: #444;
+        scrollbar-arrow-color: #101010;
+        scrollbar-shadow-color: #222;
+        scrollbar-dark-shadow-color: #111;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+    }
+}
+
+%scrolling {
+    @include scrolling($extend: false);
+}
+
+@mixin bottom-dotted($extend: true) {
+    @if $extend {
+        @extend %bottom-dotted;
+    }
+    @else {
+        background-image: linear-gradient(to right, #333 10%, rgba(255, 255, 255, 0) 0%);
+        background-position: bottom;
+        background-size: 10px 1px;
+        background-repeat: repeat-x;
+        margin-bottom: 0rem;
+        padding-bottom: 10rem;
+        &:last-of-type {
+            background-image: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+}
+
+%bottom-dotted {
+    @include bottom-dotted($extend: false);
+}
+
+@mixin icon($extend: true) {
+    @if $extend {
+        @extend %icon;
+    }
+    @else {
+        &::after {
+            @include fontSmoothing;
+            color: #fff;
+            cursor: pointer;
+            display: inline-block;
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            font-size: 24px;
+            line-height: 1;
+        }
+    }
+}
+
+%icon {
+    @include icon($extend: false);
+}
+
+@mixin ellipsis($extend: true) {
+    @if $extend {
+        @extend %ellipsis;
+    }
+    @else {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        width: 100%;
+    }
+}
+
+%ellipsis {
+    @include ellipsis($extend: false);
+}
+
+@mixin center-vertical($extend: true) {
+    @if $extend {
+        @extend %center-vertical;
+    }
+    @else {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+%center-vertical {
+    @include center-vertical($extend: false);
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 11;
+}
+
+.hidden {
+    display: none;
+}
+
+a:link {
+    color: #000;
+    transition: .2s linear color;
+}
+
+a:visited {
+    color: #999;
+}
+
+a:hover {
+    color: #000;
+    cursor: pointer;
+    text-decoration: none;
+    transition: .2s linear color;
+}
+
+a:focus {
+    color: #333333;
+}
+
+a:active {
+    color: #2B8CBF;
+}
+
+.italics {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.underline {
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 8rem;
+}
+
+.emphasis {
+    font-style: bold;
+}
+
+.text-right {
+    text-align: right;
+}
+
+
+/** OOCSS helper functions for layout works well, esp with ie6+, perfect for hospitals, government, legacy, abroad
+ */
+
+.line:after,
+.lastUnit:after {
+    clear: both;
+    content: "x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x x  ";
+    display: block;
+    font-size: xx-large;
+    height: 0 !important;
+    line-height: 0;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+.line {
+    *zoom: 1;
+}
+
+.lastUnit {
+    @include lastUnit;
+}
+
+.unit {
+    @include unit;
+}
+
+.unit1of2 {
+    @include unit;
+    width: 50%;
+}
+
+.unit1of3 {
+    @include unit;
+    width: 33.3%;
+}
+
+.unit1of4 {
+    @include unit;
+    width: 25%;
+}
+
+.unit1of5 {
+    @include unit;
+    width: 20%;
+}
+
+.unit1of6 {
+    @include unit;
+    width: 16.67%;
+}
+
+.unit3of4 {
+    @include unit;
+    width: 75%;
+}
+
+.unitRight {
+    @include unitRight;
+}
+
+.left-column {
+    @include unit;
+}
+
+.right-column {
+    @include lastUnit;
+    @include mobile {
+        @include line;
+        width: 100% !important;
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.left-column-flex {
+    display: flex;
+}
+
+.right-column-flex {
+    display: flex;
+}
+
+.hidden {
+    display: none;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    position: relative;
+    user-select: none;
+}
+
+html {
+    font-size: 1px;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    @include scrolling;
+    background: #292929;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #414345, #232526);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #414345, #232526);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: #000;
+    font-family: 'Lato', sans-serif;
+    font-size: 15rem;
+    font-weight: 400;
+    height: 100%;
+    letter-spacing: -.5rem;
+    line-height: 20rem;
+    overflow-x: hidden;
+}
+
+p {
+    @include fontSmoothing;
+    color: #222;
+    font-family: 'Lato', sans-serif;
+    font-size: 19px;
+    line-height: 32px;
+    margin-bottom: 24px;
+    text-align: left;
+}
+
+blockquote {
+    float: left;
+    padding: 10px 20px;
+    margin: 0 0 20px;
+    font-size: 17.5px;
+    border-left: 15px solid #eee;
+}
+
+blockquote p {
+    font-family: Georgia, "Times New Roman", Times, serif;
+    font-style: italic;
+    color: #494949;
+}
+
+.block {
+    // &:last-child {
+    //   @include lastUnit;
+    //   margin-right: 0 !important;
+    //   overflow: hidden;
+    //   padding: 8rem;
+    //   @include tablet {
+    //     @include unit1of2;
+    //   }
+    // }
+    @include mobile {
+        @include unit1of1;
+    }
+    @include tablet {
+        @include unit1of2;
+    }
+    @include desktop {
+        @include unit1of2;
+    }
+}
+
+.console {
+    @include fontSmoothing;
+    @include unitRight;
+    border: 1px solid #444;
+    color: cyan;
+    font-family: 'Lato', sans-serif;
+    font-size: 13rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    padding: 8rem;
+    position: fixed;
+    right: 20rem;
+    &::before {
+        @include mobile {
+            content: 'mobile';
+        }
+        @include tablet {
+            content: 'tablet';
+        }
+        @include desktop {
+            content: 'desktop';
+        }
+    }
+}
+
+// Gracious! This is the layout Mixin you've been longing for!!!  
+// Step 1) Setup your ratio
+// Example: 1.61803398875 = Golden Ratio
+$ratio: 1.618;
+@mixin layout($font-size) {
+    $base-line-height: $font-size * $ratio;
+    $padding: $base-line-height;
+    .card {
+        @include card;
+        background-color: rgba(255, 255, 255, .05);
+        margin: ($font-size * $ratio) / 3;
+    }
+    .card-contents {}
+    .card-header {
+        padding: (($font-size / $ratio) * 3) (($font-size / $ratio) * 3) 0 (($font-size / $ratio));
+        font-size: $font-size * $ratio;
+        font-weight: 100;
+        line-height: $font-size * 2 * $ratio;
+    }
+    .card-body {
+        padding: 0 ($font-size * $ratio) ($font-size * $ratio) ($font-size * $ratio);
+        font-size: $font-size;
+        letter-spacing: ($font-size * $ratio) / $font-size;
+        line-height: ($font-size * $ratio);
+    }
+    .card-footer {}
+    h1 {
+        //font-size: ((($font-size * $ratio) * $ratio) * $ratio);
+        //line-height: ($font-size * $ratio) * 3;
+    }
+    p {
+        //font-size: $font-size;
+    }
+} // end layout mixin
+// Step 2) Pick your base font size per breakpoint using the mixin
+//Example: @include typography(16px);
+//Declare you breakpoints
+@media (max-width: 299px) {
+    @include layout(13px);
+}
+
+//start of mobile first breakpoints
+@media (min-width: 300px) {
+    @include layout(16px);
+}
+
+@media(min-width: 600px) {
+    @include layout(18px);
+}
+
+@media(min-width: 1000px) {
+    @include layout(24px);
+}
+
+.container {
+    @include line;
+    padding: 40px 20px 0px 20px;
+}
+
+.content-holder {
+    @include line;
+    vertical-align: top;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 2;
+    height: 100%;
+    transition: all 300ms linear;
+}
+
+.content {
+    @include line;
+    background: #fff;
+    height: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.wrapper {
+    @include line;
+    height: 100vh;
+}
