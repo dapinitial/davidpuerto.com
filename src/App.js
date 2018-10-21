@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import P5Wrapper from 'react-p5-wrapper';
+import p5 from 'p5';
 import jQuery from 'jquery';
 import logo from './logo.svg';
 import './App.css';
