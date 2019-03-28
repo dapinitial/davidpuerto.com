@@ -30,7 +30,7 @@
 
 /*-------------Import fonts ---------------------------------------*/
 
-@import url('https://fonts.googleapis.com/css?family=Gentium+Book+Basic');
+@import url('https://fonts.googleapis.com/css?family=Proza+Libre');
 /*-------------General Style---------------------------------------*/
 
 html {
@@ -41,11 +41,11 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   font-weight: 400;
   font-size: 12px;
   color: #000;
-  background: #fff;
+  background: #eee;
   height: 100%;
   text-align: center;
 }
@@ -182,7 +182,7 @@ p {
 /* ---------Page preload--------------------------------------*/
 
 #jpreOverlay {
-  background: #fff;
+  background: #eee;
 }
 
 #jpreLoader {
@@ -220,7 +220,7 @@ p {
   text-align: right;
   font-size: 20px;
   letter-spacing: 2px;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   z-index: 2;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -318,7 +318,7 @@ p {
   top: 0;
   right: 0;
   z-index: 2;
-  background: #fff;
+  background: #eee;
 }
 
 .content-holder {
@@ -340,12 +340,12 @@ p {
 }
 
 .content {
+  color: #4a4a4a;
   float: left;
   width: 100%;
   position: relative;
   z-index: 2;
   padding: 80px 50px 50px;
-  background: #fff;
 }
 
 .full-height {
@@ -372,6 +372,8 @@ p {
   background-attachment: scroll;
   background-position: -40px;
   background-repeat: no-repeat;
+  border: 1px solid white;
+  box-shadow: -5px 0px 10px rgba(0, 0, 0, .24);
 }
 
 .respimg {
@@ -394,7 +396,7 @@ p {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.51);
+  background: rgba(238, 238, 238, 0.51);
   z-index: 10;
   height: 80px;
   -moz-user-select: none;
@@ -447,6 +449,7 @@ section {
   text-transform: uppercase;
   font-size: 16px;
   letter-spacing: 2px;
+  margin-top: -4px;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -623,7 +626,7 @@ section {
   width: 300px;
   z-index: 5;
   padding-left: 50px;
-  background: #fff;
+  background: #eee;
   overflow: hidden;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -641,12 +644,14 @@ section {
 }
 
 .sliding-menu li {
+  cursor: pointer;
   margin: 0;
   overflow: hidden;
 }
 
 .sliding-menu a {
   display: block;
+  cursor: pointer;
   text-align: left;
   width: 100%;
   padding: 15px;
@@ -659,6 +664,7 @@ section {
 }
 
 .sliding-menu a span {
+  cursor: pointer;
   position: absolute;
   top: 0;
   left: 0;
@@ -694,7 +700,7 @@ section {
   position: relative;
   font-weight: 400;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 16px;
 }
 
 .nav-social li a:before,
@@ -721,7 +727,7 @@ section {
 /*------ page title  ------------------------------------------------*/
 
 .page-title {
-  position: absolute;
+  position: fixed;
   top: 26px;
   right: 50px;
   z-index: 22;
@@ -767,8 +773,8 @@ section {
 
 .page-title h3 a {
   color: #666;
-  font-size: 14px;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-size: 16px;
+  font-family: 'Proza Libre', sans-serif;
   letter-spacing: 6px;
   padding: 8px;
   text-transform: uppercase;
@@ -793,7 +799,7 @@ section {
   top: 50%;
   width: 100px;
   height: 40px;
-  margin-top: 80px;
+  margin-top: 100px;
   margin-left: -50px;
   line-height: 36px;
 }
@@ -840,7 +846,7 @@ section {
 .slide-title h3 {
   padding: 6px 10px;
   margin-top: -20px;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   font-weight: 400;
   font-size: 32px;
   letter-spacing: 2px;
@@ -859,7 +865,7 @@ section {
   display: block;
   color: #fff;
   margin-top: 16px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -901,7 +907,7 @@ section {
   line-height: 40px;
   font-size: 14px;
   letter-spacing: 1px;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   font-weight: 100;
   text-transform: uppercase;
 }
@@ -988,7 +994,7 @@ section {
   display: inline-block;
   font-size: 34px;
   position: relative;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   font-weight: 100;
   text-transform: uppercase;
   margin-left: 20px;
@@ -1029,7 +1035,7 @@ section {
 }
 
 .slides-counter.black-colr li:last-child:before {
-  font-size: 15px;
+  font-size: 16px;
   color: #000 !important;
   position: absolute;
   margin-right: 8px;
@@ -1306,7 +1312,7 @@ section {
 .gallery-filters a {
   width: 100%;
   float: left;
-  font-size: 13px;
+  font-size: 16px;
   text-align: right;
   text-transform: uppercase;
   padding: 13px;
@@ -1380,7 +1386,7 @@ section {
   left: 21px;
   top: 22px;
   color: #000;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   font-weight: 400;
   padding: 10px;
 }
@@ -1388,7 +1394,7 @@ section {
 .mfp-counter {
   font-size: 12px;
   font-size: 18px;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   font-weight: 100;
 }
 
@@ -1444,8 +1450,8 @@ section {
   float: left;
   width: 100%;
   margin: 20px 0;
-  font-size: 10px;
-  padding: 0 10px;
+  font-size: 13px;
+  padding: 10px 20px;
   display: inline-table;
   font-weight: 400;
   letter-spacing: 4px;
@@ -1482,10 +1488,10 @@ section {
 .left-colum {
   position: fixed !important;
   z-index: 5;
-  border: 50px solid #fff;
-  border-top: 80px solid #fff;
+  border: 50px solid #eee;
+  border-top: 80px solid #eee;
   border-right: none;
-  background: #fff;
+  background: #eee;
   right: 50%;
   width: 50%;
   height: 100%;
@@ -1514,7 +1520,7 @@ section {
 
 .right-colum-wrapper {
   position: relative;
-  padding: 50px 0;
+  padding: 0;
   float: left;
   width: 100%;
   z-index: 2;
@@ -1528,13 +1534,13 @@ section {
 
 .right-colum section {
   position: relative;
-  margin-top: 10%;
+  /* margin-top: 10%; */
 }
 
 a.link-content {
   float: left;
   margin-top: 80px;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   color: #666;
   padding: 10px;
   text-transform: uppercase;
@@ -1546,12 +1552,13 @@ a.link-content {
   user-select: none;
 }
 
-.right-colum .container p {
+.right-colum .container p,
+.right-colum .container ul li {
   -webkit-font-smoothing: antialiased;
   text-align: left;
-  color: #a3a3a3;
-  font-family: 'Gentium Book Basic';
-  font-size: 13px;
+  color: #4a4a4a;
+  font-family: 'Proza Libre';
+  font-size: 16px;
   font-weight: 400;
   line-height: 30px;
   padding-bottom: 20px;
@@ -1560,7 +1567,7 @@ a.link-content {
 
 .right-colum h2 {
   float: left;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   font-weight: 400;
   letter-spacing: 4px;
   text-transform: uppercase;
@@ -1581,7 +1588,7 @@ a.link-content {
 .top-title-text {
   background: rgba(255, 255, 255, .5);
   position: absolute;
-  top: 30%;
+  bottom: 0;
   left: 0px;
   width: 100%;
   z-index: 2;
@@ -1807,7 +1814,7 @@ footer {
   line-height: 50px;
   text-align: left;
   padding-left: 50px;
-  background: rgba(255, 255, 255, 0.51);
+  background: rgba(238, 238, 238, 0.24);
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -1815,7 +1822,7 @@ footer {
 }
 
 footer p {
-  font-size: 10px;
+  font-size: 12px;
   margin-top: 4px;
   font-weight: 400;
   text-transform: uppercase;
@@ -1848,7 +1855,7 @@ footer ul li {
 footer ul li a {
   cursor: pointer;
   position: relative;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 400;
   text-transform: uppercase;
   color: #666;
@@ -1976,7 +1983,7 @@ footer ul li a i {
   font-size: 34px;
   text-transform: uppercase;
   margin-bottom: 10px;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
 }
 
 .project-list li {
@@ -2071,7 +2078,7 @@ footer ul li a i {
   float: left;
   padding: 10px 0;
   color: #666;
-  font-size: 13px;
+  font-size: 16px;
   line-height: 30px;
   position: relative;
   letter-spacing: 4px;
@@ -2120,7 +2127,7 @@ footer ul li a i {
   border: 0;
   border-bottom: 1px solid #ccc;
   -webkit-appearance: none;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
 }
 
 #contact-form textarea {
@@ -2141,12 +2148,12 @@ footer ul li a i {
   line-height: 14px;
   cursor: pointer;
   letter-spacing: 2px;
-  font-size: 13px;
+  font-size: 16px;
   color: #666;
   letter-spacing: 2px;
   text-transform: uppercase;
   -webkit-appearance: none;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
 }
 
 .button.link-content {
@@ -2166,7 +2173,7 @@ footer ul li a i {
 
 .button.link-content:hover {
   background-color: #ccc;
-  color: #fff;
+  color: #1a1a1a;
   text-shadow: none;
 }
 
@@ -2177,22 +2184,22 @@ footer ul li a i {
 
 .error_message {
   text-align: left;
-  font-size: 13px;
+  font-size: 16px;
   max-width: 450px;
   position: relative;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   padding: 10px;
 }
 
 #success_page h3 {
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   text-align: left;
   font-size: 18px;
 }
 
 #success_page p {
   margin-top: 10px;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   text-align: left;
   padding: 6px 6px 6px 0;
   color: #000;
@@ -2277,7 +2284,7 @@ footer ul li a i {
   content: '';
   position: absolute;
   right: 20px;
-  bottom: -4px;
+  bottom: -10px;
   width: 0;
   height: 1px;
   background: #666;
@@ -2310,7 +2317,7 @@ footer ul li a i {
   height: 100%;
   z-index: 2;
   display: block;
-  font-size: 10px;
+  font-size: 16px;
   text-align: right;
   font-weight: 400;
   text-transform: uppercase;
@@ -2415,7 +2422,7 @@ article:hover .overlay {
 .post-info h3,
 .post-title,
 #comments-title {
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   font-weight: 400;
   font-size: 18px;
   text-transform: uppercase;
@@ -2433,8 +2440,8 @@ article:hover .overlay {
 .post-info p,
 .post-date {
   text-align: left;
-  color: #a3a3a3;
-  font-size: 13px;
+  color: #4a4a4a;
+  font-size: 16px;
   font-weight: 400;
   line-height: 20px;
   padding-bottom: 20px;
@@ -2503,7 +2510,7 @@ article:hover .overlay {
 }
 
 .widgets h4 {
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   font-weight: 400;
   font-size: 16px;
   text-transform: uppercase;
@@ -2683,7 +2690,7 @@ article:hover .overlay {
   width: 100%;
   font-size: 34px;
   text-transform: uppercase;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
 }
 
 .ajaxPageSwitchBacklink {
@@ -2693,7 +2700,7 @@ article:hover .overlay {
   color: #000;
   position: relative;
   top: 30%;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
 }
 
 .ajaxPageSwitchBacklink:before {
@@ -2835,18 +2842,20 @@ article:hover .overlay {
     color: #666;
     font-size: 14px;
     text-transform: uppercase;
-    font-family: 'Gentium Book Basic', sans-serif;
+    font-family: 'Proza Libre', sans-serif;
     font-weight: 700;
     letter-spacing: 6px;
   }
   .right-colum {
     padding-right: 0;
-    padding-top: 0;
+    padding-top: 100px;
     z-index: 21;
     width: 100%;
     float: left;
   }
   .left-colum {
+    pointer-events: none;
+    opacity: .1984;
     position: relative;
     z-index: 20;
     border: none;
@@ -2902,7 +2911,7 @@ article:hover .overlay {
     font-size: 24px;
   }
   .header-overlay {
-    background: rgba(255, 255, 255, 1.0);
+    background: rgba(238, 238, 238, 1.0);
     z-index: 14;
   }
   .right-colum section {
@@ -3042,7 +3051,7 @@ article:hover .overlay {
   font-size: 18px;
   border-bottom: 1px solid #ccc;
   font-weight: 500;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
@@ -3050,7 +3059,7 @@ article:hover .overlay {
 }
 
 .accordion-title {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.84);
   border-bottom: 1px solid #F4F4F4;
   padding-left: 20px;
   -moz-user-select: none;
@@ -3062,7 +3071,7 @@ article:hover .overlay {
 .accordion-title span {
   color: #666;
   font-weight: 300;
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   -moz-user-select: none;
   -webkit-user-select: none;
   -ms-user-select: none;
@@ -3075,7 +3084,7 @@ article:hover .overlay {
 }
 
 .accordion-title:hover {
-  background: #eee;
+  background: #fff;
   -webkit-transition: all .3s ease-in-out;
   -moz-transition: all .3s ease-in-out;
   -o-transition: all .3s ease-in-out;
@@ -3086,7 +3095,7 @@ article:hover .overlay {
   display: none;
   padding: 10px 0px 30px 0;
   line-height: 1.7em;
-  font-size: 13px;
+  font-size: 16px;
   text-align: left;
   padding: 6px;
 }
@@ -3098,7 +3107,7 @@ article:hover .overlay {
 }
 
 .accordion .accordion-inner h4 {
-  font-family: 'Gentium Book Basic', sans-serif;
+  font-family: 'Proza Libre', sans-serif;
   text-transform: uppercase;
   color: #666;
   font-size: 14px;
@@ -3125,5 +3134,3 @@ _:future,
 :root .title-text {
   margin-top: -16px;
 }
-
-/* Localized */

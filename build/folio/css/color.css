@@ -39,15 +39,15 @@ a.link-content,
 .filter-button,
 .black-colr,
 .back-link {
-  background: #eee;
+  background: #fff;
 }
 
 #jpreBar {
-  background: #ccc;
+  background: #fff;
 }
 
 .loader span {
-  background: #333;
+  background: #fff;
 }
 
 .slides-counter li,
