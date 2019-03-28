@@ -1,0 +1,148 @@
+/* --------- footer --------------------------------------*/
+
+.height-emulator {
+    float: left;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+footer {
+    @include line;
+    user-select: none;
+    background: #191919;
+    line-height: 50px;
+    text-align: center;
+    transform: translate3d(0, 0, 0);
+    width: 100%;
+    z-index: 2;
+}
+
+.footer-info {
+    float: left;
+    width: 100%;
+    padding: 20px;
+}
+
+.footer-info h4 {
+    float: left;
+    width: 100%;
+    color: #fff;
+    position: relative;
+    font-size: 16px;
+    text-transform: uppercase;
+    text-align: left;
+    margin-bottom: 45px;
+}
+
+.footer-info h4:before {
+    content: '';
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    width: 60px;
+    height: 2px;
+}
+
+.footer-social li {
+    float: left;
+    padding: 4px;
+}
+
+.footer-social li a {
+    width: 40px;
+    height: 40px;
+    float: left;
+    border-radius: 100%;
+    line-height: 40px;
+    color: #191919;
+    font-size: 18px;
+    transition: .187s linear color;
+    &:hover {
+        color: #fff;
+        transition: .187s linear color;
+    }
+}
+
+.footer-contacts li {
+    float: left;
+    width: 100%;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.footer-contacts li a {
+    color: #707070;
+    font-size: 16px;
+    text-transform: uppercase;
+    &:hover {
+        color: #fff;
+    }
+}
+
+.footer-contacts li a i {
+    padding-right: 10px;
+}
+
+.to-top-holder {
+    float: left;
+    width: 100%;
+    background: #000;
+    position: relative;
+}
+
+.to-top {
+    @include fontSmoothing;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    width: 50px;
+    height: 70px;
+    float: right;
+    font-size: 24px;
+    color: #fff;
+    line-height: 70px;
+}
+
+.to-top-holder p {
+    @include fontSmoothing;
+    color: #fff;
+    position: relative;
+    top: 45px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-left: 20px;
+    letter-spacing: .84px;
+}
+
+.to-top-holder p:before,
+.to-top-holder p:after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 0px;
+    z-index: 2;
+}
+
+.to-top-holder p:before {
+    width: 2px;
+    height: 50px;
+}
+
+.to-top-holder p:after {
+    width: 50px;
+    height: 2px;
+}
+
+.footer-contacts li a,
+.twitter-holder .customNavigation a,
+.to-top i,
+.footer-social li a i {
+    transition: all 300ms linear;
+}
+
+.copyright {
+    color: #eee;
+    display: inline-block;
+}

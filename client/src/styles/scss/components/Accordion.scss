@@ -1,0 +1,123 @@
+.accordion {
+    width: 100%;
+}
+
+.panel {
+    @include line;
+    display: block;
+    background-color: #fff;
+    width: 100%;
+}
+
+.panel__label {
+    @include line;
+    position: relative;
+    display: block;
+    width: 100%;
+    color: #292929;
+    padding: 25px 0px 25px 0;
+    text-align: left;
+    font-size: 18px;
+    border: 0;
+    border-bottom: 1px solid #f1f1f1;
+    transition: color 0.2s linear;
+    cursor: pointer;
+    i {
+        color: #FF440B;
+        font-size: 24px;
+        padding-right: 20px;
+    }
+    .dates {
+        color: #000;
+        font-size: 20px;
+    }
+    .company,
+    .officeLocation {
+        @include fontSmoothing;
+        color: #666;
+        font-size: 20px;
+    }
+}
+
+.panel__label:focus {
+    outline: none;
+}
+
+.panel__label:after,
+.panel__label:before {
+    content: '';
+    position: absolute;
+    right: 25px;
+    top: 50%;
+    width: 22px;
+    height: 2px;
+    margin-top: -2px;
+    background-color: #372717;
+}
+
+.panel__label:before {
+    transform: rotate(-90deg);
+    transition: transform 0.35s cubic-bezier(0.65, 0.05, 0.36, 1);
+    transition: transform 0.35s cubic-bezier(0.65, 0.05, 0.36, 1), ;
+}
+
+.panel[aria-expanded='true'] .panel__content {
+    opacity: 1;
+}
+
+.panel[aria-expanded='true'] .panel__label {
+    color: #957029;
+}
+
+.panel[aria-expanded='true'] .panel__label:before {
+    transform: rotate(0deg);
+}
+
+.panel__inner {
+    @include line;
+    overflow: hidden;
+    will-change: height;
+    transition: height 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
+}
+
+.panel__content {
+    @include line;
+    margin: 5px 25px 25px;
+    color: #756658;
+    opacity: 0;
+    text-align: left;
+    transition: opacity 0.18s linear 0.18s;
+    h4 {
+        @include fontSmoothing;
+        @include line;
+        color: #FF4400;
+        font-size: 20px;
+        font-weight: bold;
+        padding: 16px 0;
+    }
+    ul {
+        @include line;
+        padding: 16px 0;
+    }
+    ul li {
+        @include unit;
+        list-style-type: disc;
+        margin-right: 20px;
+        &::last-of-type {
+            margin-right: 0;
+        }
+    }
+    p {
+        @include fontSmoothing;
+        color: #222;
+        font-family: 'Lato', sans-serif;
+        font-size: 19px;
+        line-height: 32px;
+        margin-bottom: 24px;
+        text-align: left;
+    }
+}
+
+.panel:not(:last-child) {
+    margin-bottom: 3px;
+}

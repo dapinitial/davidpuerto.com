@@ -1,0 +1,128 @@
+#contact-dap {
+    .container {
+        @include tablet {
+            padding: 100px 20px 0px 20px;
+        }
+        @include mobile {
+            padding: 100px 20px 0px 20px;
+        }
+    }
+}
+
+.contact-info {
+    float: left;
+    width: 100%;
+    position: relative;
+    padding: 50px 0;
+}
+
+.contact-info span {
+    text-align: left;
+    float: left;
+    font-size: 14px;
+    color: #3e3e3e;
+    font-style: italic;
+}
+
+.contact-info ul li {
+    float: left;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.contact-info ul li a {
+    @include fontSmoothing;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding-right: 20px;
+    transition: all 300ms linear;
+}
+
+.contact-info ul li a i {
+    padding-right: 5px;
+}
+
+.contact-info ul li a:hover {
+    color: #000;
+}
+
+#contact-form {
+    float: left;
+}
+
+#contact-form input[type="text"],
+#contact-form input[type="email"],
+#contact-form textarea {
+    color: #000;
+    font-size: 16px;
+    padding: 15px 0;
+    width: 100%;
+    padding-left: 10px;
+    background: none;
+    margin-bottom: 20px;
+    border: 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    position: relative;
+}
+
+#contact-form input[type=text]:focus,
+#contact-form textarea:focus,
+input[type=email]:focus {
+    color: #000;
+}
+
+#contact-form textarea {
+    height: 170px;
+    resize: none;
+}
+
+.submitButton {
+    @include unitRight;
+}
+
+#contact-form button[type="submit"],
+.controls button {
+    @include fontSmoothing;
+    background: #FF4400;
+    border: none;
+    padding: 14px 20px;
+    line-height: 14px;
+    cursor: pointer;
+    font-size: 13px;
+    color: #000;
+    -webkit-appearance: none;
+    float: left;
+    text-transform: uppercase;
+}
+
+#contact-form button[type="submit"]:hover,
+.controls button:hover {
+    color: #fff;
+}
+
+.error_message {
+    @include fontSmoothing;
+    text-align: left;
+    margin-bottom: 30px;
+    font-size: 16px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+#success_page h3 {
+    @include fontSmoothing;
+    text-align: left;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+#success_page p {
+    color: #000;
+    margin-top: 10px;
+}
+
+#message fieldset {
+    border: none;
+    color: #000;
+}

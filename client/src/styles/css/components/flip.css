@@ -1,0 +1,29 @@
+.flip {
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  height: 40px;
+  position: relative;
+  top: 10px;
+  perspective: 500;
+  transition: all .3s ease-in-out; }
+  .flip div {
+    font-weight: 600;
+    width: auto;
+    transition: all .3s ease-in-out;
+    opacity: 0;
+    transform-origin: 0% 0%;
+    transform: rotateX(90deg);
+    position: absolute;
+    top: -20px;
+    left: 0; }
+    .flip div.set {
+      top: 0;
+      opacity: 1;
+      transform-origin: 0% 0%;
+      transform: rotateX(0deg); }
+    .flip div.down {
+      top: 40px;
+      opacity: 0;
+      transform-origin: 0% 0%;
+      transform: rotateX(-90deg); }

@@ -1,0 +1,147 @@
+.left-column {
+    background: rgba(0, 0, 0, .25);
+    flex-basis: 40%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    @include tablet {
+        display: none;
+    }
+    @include mobile {
+        display: none;
+    }
+}
+
+.right-column {
+    @include mobile {
+        @include line;
+        width: 100%;
+    }
+}
+
+#about-dap {
+    .container {
+        @include tablet {
+            padding: 100px 20px 0px 20px;
+        }
+        @include mobile {
+            padding: 100px 20px 0px 20px;
+        }
+    }
+    .about {
+        padding-top: 66px;
+    }
+}
+
+.section-title {
+    @include line;
+    h2 {
+        padding: 20px;
+    }
+}
+
+.section-body {
+    @include line;
+    padding: 20px;
+}
+
+.sect-subtitle {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    opacity: 0.2;
+    color: #ccc;
+    font-size: 120px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/*------ Fixed column-------------------------------------------------*/
+
+.fixed-column {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 40%;
+    height: 100%;
+    z-index: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    background-size: 140% 100%;
+    background-position-x: -100px;
+    background-position-y: 70px;
+    background-repeat: no-repeat;
+    box-shadow: 1px 1px 11px rgba(0, 0, 0, .5) inset;
+}
+
+.fixed-column .overlay {
+    opacity: 0.3;
+}
+
+.bg-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.4s ease-in-out;
+    -moz-transition: all 0.4s ease-in-out;
+    -o-transition: all 0.4s ease-in-out;
+    -ms-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
+
+.chbg {
+    opacity: 0.5;
+}
+
+.bg-wrapper:before,
+.bg-wrapper:after {
+    content: '';
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    z-index: 2;
+    background: rgba(255, 255, 255, 0.51);
+}
+
+.bg-wrapper:before {
+    width: 10px;
+    height: 70%;
+}
+
+.bg-wrapper:after {
+    width: 70%;
+    height: 10px;
+    margin-left: 10px;
+}
+
+.bg-title {
+    position: absolute;
+    bottom: 90px;
+    left: 90px;
+    font-size: 56px;
+    text-align: left;
+}
+
+.bg-title span {
+    float: left;
+    line-height: 55px;
+    max-width: 240px;
+    color: rgba(255, 255, 255, 0.91);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.bg-title:before {
+    content: '';
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+}
+
+.accordion .fa-graduation-cap,
+.accordion .fa-graduation-briefcase {
+    font-size: 20px;
+}
