@@ -65,6 +65,7 @@ body {
 /*-------------Grid---------------------------------------*/
 
 @media screen and (min-width: 768px) {
+
   .grid-1,
   .grid-2,
   .grid-3,
@@ -78,6 +79,7 @@ body {
     float: left;
     position: relative;
   }
+
   .grid-8 {
     width: 46.969696969697%;
     margin: 0 1.515151515152%;
@@ -88,19 +90,24 @@ body {
   .grid-1 {
     width: 13.636363636364%;
   }
+
   .grid-2 {
     width: 30.30303030303%;
   }
+
   .grid-3,
   .grid-8 {
     width: 46.969696969697%;
   }
+
   .grid-4 {
     width: 63.636363636364%;
   }
+
   .grid-5 {
     width: 80.30303030303%;
   }
+
   .grid-6,
   .grid-full {
     width: 96.969696969697%;
@@ -247,52 +254,64 @@ p {
 /* ANIMATIONS */
 
 @-webkit-keyframes width {
+
   0%,
   100% {
     -webkit-transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
   }
+
   0% {
     width: 0;
   }
+
   100% {
     width: 100%;
   }
 }
 
 @-webkit-keyframes width {
+
   0%,
   100% {
     -webkit-transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
   }
+
   0% {
     width: 0;
   }
+
   100% {
     width: 100%;
   }
 }
 
 @-moz-keyframes width {
+
   0%,
   100% {
     -moz-transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
   }
+
   0% {
     width: 0;
   }
+
   100% {
     width: 100%;
   }
 }
 
 @-moz-keyframes width {
+
   0%,
   100% {
     -moz-transition-timing-function: cubic-bezier(1, 0, 0.65, 0.85);
   }
+
   0% {
     width: 0;
   }
+
   100% {
     width: 100%;
   }
@@ -354,8 +373,6 @@ p {
 
 .bg {
   background-size: cover;
-  background-attachment: scroll;
-  background-position: center;
   background-repeat: no-repeat;
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -2793,14 +2810,17 @@ article:hover .overlay {
 /*------  Responsive ------------------------------------------------------*/
 
 @media only screen and (max-width: 1036px) {
+
   .kinekt-wrapper,
   .no-kinekt {
     width: 100%;
     padding: 100px 0 60px 0;
   }
+
   .no-kinekt {
     padding-top: 0;
   }
+
   .fixed-filters {
     position: absolute;
     z-index: 8;
@@ -2814,6 +2834,7 @@ article:hover .overlay {
     padding: 10px;
     display: none;
   }
+
   .fixed-filters a {
     font-size: 10px;
     margin-bottom: 10px;
@@ -2821,15 +2842,19 @@ article:hover .overlay {
     float: none;
     display: block;
   }
+
   .fixed-filters a span {
     padding-right: 0;
   }
+
   .count-folio {
     margin-top: 20px;
   }
+
   .vis-filter {
     display: block;
   }
+
   .filter-button {
     width: 110px;
     padding: 6px 10px;
@@ -2846,6 +2871,7 @@ article:hover .overlay {
     font-weight: 700;
     letter-spacing: 6px;
   }
+
   .right-colum {
     padding-right: 0;
     padding-top: 100px;
@@ -2853,6 +2879,7 @@ article:hover .overlay {
     width: 100%;
     float: left;
   }
+
   .left-colum {
     pointer-events: none;
     opacity: .1984;
@@ -2867,18 +2894,22 @@ article:hover .overlay {
     height: auto;
     padding: 250px 0;
   }
+
   .right-colum .container {
     padding: 0;
     top: 0;
   }
+
   .link-content {
     margin-bottom: 30px;
   }
+
   .right-colum-wrapper,
   .right-colum .container,
   #project-gallery {
     padding: 0;
   }
+
   .count-folio div.num-album {
     font-size: 18px;
     left: -54px;
@@ -2887,6 +2918,7 @@ article:hover .overlay {
 }
 
 @media only screen and (max-width: 756px) {
+
   .gallery-item,
   .grid-sizer,
   .four-coulms .gallery-item,
@@ -2895,57 +2927,72 @@ article:hover .overlay {
   .three-coulms .grid-sizer {
     width: 50%;
   }
+
   .btn-menu-wrapper {
     margin: 30px 20px 0 -6px;
   }
+
   .logo-holder {
     margin: 29px 0 0 20px;
   }
+
   .content {
     padding: 80px 30px 50px;
   }
+
   .pagination {
     right: 10px;
   }
+
   .slide-title h3 {
     font-size: 24px;
   }
+
   .header-overlay {
     background: rgba(238, 238, 238, 1.0);
     z-index: 14;
   }
+
   .right-colum section {
     margin-top: 0;
   }
+
   footer {
     padding-left: 30px;
     background: #fff;
   }
+
   footer p,
   .page-title {
     display: none;
   }
+
   .filter-button {
     margin: 24px 30px 0 0;
   }
+
   .fixed-filters {
     right: 30px;
     top: 80px;
   }
+
   .portfolio-options.arrow-left i,
   .portfolio-options2.arrow-left2 i {
     left: 12px;
   }
+
   .portfolio-options.arrow-right i,
   .portfolio-options2.arrow-right2 i {
     right: 12px;
   }
+
   .portfolio-options.arrow-right span,
   .portfolio-options2.arrow-right2 span,
   .portfolio-options.arrow-left span,
   .portfolio-options2.arrow-left2 span {
     font-size: 12px;
   }
+
   article {
     opacity: 1 !important;
     visibility: visible;
@@ -2954,23 +3001,28 @@ article:hover .overlay {
     -webkit-perspective: 0;
     -webkit-backface-visibility: visible;
   }
+
   .blog-pagination {
     margin-top: 0;
     padding-bottom: 0;
   }
+
   .blog-header {
     left: 30px;
   }
+
   .blog-header:before {
     right: -10px;
     width: 70px;
   }
+
   .top-title {
     position: absolute;
     padding-right: 30%;
     -webkit-transform: translate3d(0, 0, 0);
     z-index: 1
   }
+
   .top-title-text {
     position: absolute;
     top: 10%;
@@ -2979,25 +3031,31 @@ article:hover .overlay {
     z-index: 2;
     text-align: left;
   }
+
   .top-title-text h2 {
     font-size: 25px;
   }
+
   .top-title-text p {
     font-size: 10px;
   }
+
   #comments-blog {
     padding: 0 0 60px 0;
   }
+
   .media-container:before,
   .media-container:after {
     width: 30px;
   }
+
   .single-title .slide-title {
     left: -30px;
   }
 }
 
 @media only screen and (max-width: 540px) {
+
   .gallery-item,
   .grid-sizer,
   .services-img,
@@ -3008,25 +3066,24 @@ article:hover .overlay {
   .three-coulms .grid-sizer {
     width: 100%;
   }
+
   .services-info {
     padding-left: 0;
     margin-top: 20px;
   }
+
   .portfolio-options.call-info {
     top: 120px;
     left: 30px;
   }
+
   .slides-counter {
     display: none;
   }
 }
 
 @media only screen and (-webkit-min-device-pixel-ratio: 2) {
-  .bg {
-    background-attachment: scroll !important;
-    -webkit-background-size: cover;
-    background-position: center;
-  }
+  .bg {}
 }
 
 /*------ accordion - ------------------------------------------------*/
