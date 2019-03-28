@@ -1,5 +1,6 @@
 {
   "name": "davidpuerto.com",
+<<<<<<< HEAD
   "version": "1.0.0",
   "description": "davidpuerto.com",
   "main": "index.js",
@@ -60,4 +61,28 @@
     "pm2": "^2.4.2",
     "webpack-dev-server": "^1.16.2"
   }
+=======
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-scripts": "2.0.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+>>>>>>> f3e87cd266bc2fad065fec462e772637c3966c09
 }

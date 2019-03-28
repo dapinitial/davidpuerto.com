@@ -1,0 +1,24 @@
+.App {
+  background: url(./images/hero.gif) no-repeat;
+  background-size: cover;
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  width: 20vmax;
+}
+
+.App-header {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
