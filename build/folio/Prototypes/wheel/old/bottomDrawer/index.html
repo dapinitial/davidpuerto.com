@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="Pragma" content="no-cache"/>
+        <meta http-equiv="Expires" content="-1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="HandheldFriendly" content="true" />
+
+        <title>Bottom Drawer Prototype</title>
+
+        <link rel="stylesheet" type="text/css" href="../css/reset.css" />
+        <link rel="stylesheet" type="text/css" href="../css/layout.css" />
+        <link rel="stylesheet" type="text/css" href="../css/style.css" />
+        <link rel="stylesheet" type="text/css" href="../css/wheelMenu.css" />
+        <link rel="stylesheet" type="text/css" href="../css/bottomDrawer.css" />
+
+    </head>
+    <body class="overflow-hidden">
+    
+
+
+   	<script>
+	$(document).ready(function(){
+	
+		// handle Drawer clicks & tab indicator:
+	    $("#menu16 li").on("click", function(e){
+	       
+	        e.preventDefault();
+
+	        var goTo = $(this).attr("goTo");
+	        var ref = $(this).attr("ref");
+
+	        console.log("You've clicked on: " + " " + ref);
+
+	        $("#backButton").html(ref);
+	        $("#wheel").load("wheelNav/" + goTo + ".html");
+
+	// handle back button:
+	    $("#backButton").on("click", function(e){
+	        e.preventDefault();
+	        $("#wheel").load("wheelNav/firstLevel.html").fadeIn(); ;
+	    });
+	        return false;
+	    });
+	    
+	    // get thw width of the wider LI and set to all LI elements
+	    var max = 0;
+	    $('#slCont ul li').each(function(){
+	        var this_width = $(this).outerWidth();
+	        if (this_width > max) {
+	            max = this_width;
+	        }
+	        $(this).width(max);
+	    });
+	    $("#slCont ul li").width(max);
+	    $('#sl, #slCont').width((max*3)+30); // +30 are all the LI margins of 3 images (CSS 5px)
+	    //////////////////////////////////////////////////////////    
+	    var galW = $('#slider').width(),
+	        ulN = $('#slCont ul li').length,
+	        c = 1;
+	    $('#slCont').width(galW * ulN);
+	    function b(){
+	        cc = (c === 1) ? $('#back').hide() : $('#back').show();
+	        ccc =(c >= ulN/3) ? $('#forward').hide() : $('#forward').show();    
+	    }
+	    b();
+	    function a(){
+	        $('#slCont').animate({left: '-'+ galW*(c-1)}, 800);
+	    }
+	    $('#bottomDrawer')hammer().bind("swiperight dragright", function() {
+	        c++; b(); a();
+	    });
+	    $('#bottomDrawer')hammer().bind("swipeleft dragleft", function() {
+	        c--; b(); a();
+	    });    
+	    
+	});
+   	</script>
+
+    </body>
+</html>

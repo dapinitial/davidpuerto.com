@@ -1,0 +1,46 @@
+.bottomDrawer {
+	position: fixed; bottom: 0px;
+	width: 900px;
+	position: absolute; z-index: 1200;
+	float: left; overflow: hidden;
+	background: url(http://us.cdn3.123rf.com/168nwm/thesupe87/thesupe871003/thesupe87100300033/6576673-a-realistic-carbon-fiber-background-that-tiles-seamlessly-as-a-pattern-in-any-direction.jpg) repeat;
+}
+.bottomDrawer div.scroll-h div {
+	width: 75px; height: 50px; padding: 23px; float: left; display: inline; text-align: center;
+	background: rgba(255,255,255, .4); border: 2px solid white; color: white; font: 18px/24px Myriad Pro;
+}
+
+.scroll-h {
+	overflow-x: scroll; -webkit-overflow-scrolling: touch;  -webkit-transform: translate3d(0, 0, 0);
+}
+
+#bottomDrawerSlider {
+    position:relative;
+    margin:0 auto;
+    height:100px;
+    overflow:hidden;
+}
+
+.tabIndicator {
+	background: url(http://us.cdn3.123rf.com/168nwm/thesupe87/thesupe871003/thesupe87100300033/6576673-a-realistic-carbon-fiber-background-that-tiles-seamlessly-as-a-pattern-in-any-direction.jpg) repeat;
+	width: 75px; height: 50px; padding: 23px; 
+	position: absolute; z-index: 200;
+	bottom: 100px; 	left: 400px;
+	border: 2px solid white; color: white; font: 18px/24px Myriad Pro;
+}
+
+#box { 
+	position: fixed; z-index: 1;
+	top: 0; left: 0;
+	width: 100%; height: 100%;
+	background-color: rgba(255,255,255,.5); 
+}
+#rangeSlider { 
+	width: 20px; 
+}
+
+.rangeSliderController {
+	position: absolute;
+	top: 20px; 	right: 40px;
+	text-align: center; margin: 0 auto;
+}
