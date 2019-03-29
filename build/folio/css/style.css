@@ -1599,7 +1599,7 @@ a.link-content {
 .right-quotes {
   position: absolute;
   transform: rotateY(-180deg);
-  left: -15px;
+  margin-left: -15px;
 }
 
 .top-title {
