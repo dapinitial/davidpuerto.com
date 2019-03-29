@@ -1596,6 +1596,12 @@ a.link-content {
   text-align: left;
 }
 
+.right-quotes {
+  position: absolute;
+  transform: rotateY(-180deg);
+  left: -15px;
+}
+
 .top-title {
   position: absolute;
   padding-right: 30%;
