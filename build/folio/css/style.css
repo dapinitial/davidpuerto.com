@@ -91,7 +91,6 @@ header.sticky-half .dl-menuwrapper {
   transition-delay: 1.4s;
 }
 
-/* 
 #preloader {
   position: fixed;
   top: 0;
@@ -101,7 +100,7 @@ header.sticky-half .dl-menuwrapper {
   text-align: center;
   display: table;
   height: 100%;
-} */
+}
 
 .animsition-overlay-slide {
   z-index: 111;
