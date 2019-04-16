@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="Pragma" content="no-cache"/>
+        <meta http-equiv="Expires" content="-1" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="HandheldFriendly" content="true" />
+		<title>Prototype</title>
+		<link rel="stylesheet" type="text/css" href="css/style3.css" />
+		<link rel="stylesheet" type="text/css" href="css/wheelMenu.css" />
+		<link rel="stylesheet" type="text/css" href="css/bottomDrawer.css" />
+
+		<style>
+		#wheelMenu{
+			left: 0px !important;
+			top: 0px !important;
+		}
+
+		input[type="radio"].reviewRadio{ opacity: 0; float: left; width: 60px; height: 60px; -webkit-border-radius: 50%;font-size: 14px; font-family: Myriad Pro;}
+		input[type="radio"]+label{font-size: 14px; font-family: Myriad Pro; font-weight: bold; position: absolute; top: 20px; left: 20px;}
+		input[type="radio"]:checked+label{ color: #f60084; font-size: 14px; font-family: Myriad Pro;font-weight: bold;} 
+		input[type="radio"]:checked+label{ color: #f60084; font-size: 14px; font-family: Myriad Pro;font-weight: bold;} 
+		input[type="radio"]:checked+label{ color: #f60084; font-size: 14px; font-family: Myriad Pro;font-weight: bold;} 
+
+		</style>
+
+	</head>
+	<body>
+		<section id="wheelMenu">
+		    <nav id="wheel">
+		     	<canvas></canvas>
+				<ul class="items" id="content">
+					
+				</ul>
+			</nav>
+		</section>
+
+<script type="text/javascript" src="js/path.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+    $("input:radio:checked").data("chk",true);
+    $("input:radio").click(function(){
+        $("input[name='"+$(this).attr("name")+"']:radio").not(this).removeData("chk");
+        $(this).data("chk",!$(this).data("chk"));
+        $(this).prop("checked",$(this).data("chk"));
+    });
+	
+	//build HOME circle
+	var buildHomeCircle = function()
+	{
+
+	   var r = 130, cx = 210, cy = 210,
+	       $circle = $('#wheel canvas'),
+	       canvas2 = $circle[0];
+
+	   // add some padding
+	   canvas2.width = cx * 2;
+	   canvas2.height = cy * 2;
+
+	   var drawGuides = true,
+	       doAgn = true,
+	       aOff = 0,
+	       doOnce = true;
+
+	   function position2()
+	   {
+
+	      // Center of the circle relative to the page
+	      var cpos = $circle.offset();
+	          px = cpos.left,
+	          py = cpos.top;
+
+	      var $items = $('#wheel .items').children(),
+	          icnt = $items.length,
+	          dstep = 360 / icnt,
+	          cpath = PATH([
+	                    {fn: 'start', x: cx+r, y: cy},
+	                    {fn: 'circle', radius: r}
+	                  ]);
+
+	      var ctx = canvas2.getContext( "2d" );
+
+	      ctx.fillStyle = "white";
+
+	      if (!drawGuides)
+	         ctx.clearRect(0, 0, canvas2.width, canvas2.height);
+
+	      $items.each(function (idx, el)
+	        {
+	           var $el = $(el),
+	               a = dstep * idx,
+	               w = $el.outerWidth(true),
+	               h = $el.outerHeight(true),
+	               align = PATH([
+	                          {fn: 'start',     x: cx-r-w,  y: cy-h},
+	                          {fn: 'rectangle', w: 2*r+w,   h: 2*r+h, cornerRadius: r}
+	                        ]),
+	               pt;
+
+	           if (idx == 0 && doOnce && drawGuides)
+	              PATH.adapter.drawCanvas(canvas2, align, {fillStyle: 'none'});
+
+	           if (doAgn)
+	              pt = align.step((a + aOff) / 360);
+	           else
+	              pt = cpath.step((a + aOff) / 360);
+
+	           $el.css({
+	                left: (px + pt.x) + 'px',
+	                top: (py + pt.y) + 'px'
+	             });
+
+	        });
+
+	      if (drawGuides && doOnce)
+	      {
+	         ctx.strokeStyle = "black";
+	         ctx.lineWidth = 1;
+
+	         ctx.beginPath();
+	         ctx.arc(cx, cy, r, 0, 2*Math.PI);
+	         ctx.stroke();
+	      }
+
+	      doOnce = false;
+	   }
+
+	   position2();
+
+	}
+
+	buildHomeCircle();
+});
+</script>
+
+</body>
+</html>
