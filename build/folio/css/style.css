@@ -98,8 +98,11 @@ header.sticky-half .dl-menuwrapper {
   width: 100%;
   z-index: 1000;
   text-align: center;
-  display: table;
+  display: flex;
   height: 100%;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
 }
 
 .animsition-overlay-slide {
@@ -107,20 +110,6 @@ header.sticky-half .dl-menuwrapper {
   background-color: #ccc;
 }
 
-/* =Loader
--------------------------------------------------------------- */
-
-#pageloader {
-  background-color: #fff;
-  position: absolute;
-  z-index: 99999999999999;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-}
 
 .pageloader-fade {
   opacity: 0 !important;
