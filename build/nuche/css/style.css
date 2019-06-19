@@ -21,6 +21,8 @@
 
 /*------------------------ 1 Body and Core Css ------------------------*/
 
+@import url('https://fonts.googleapis.com/css?family=Gentium+Basic&display=swap');
+
 body {
   font-family: "Gentium Basic", serif;
   background: #444;
