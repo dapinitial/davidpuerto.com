@@ -35,6 +35,7 @@ body {
   background: #ffffff;
   color: #848484;
   font-weight: 400;
+  font-family: "Gentium Basic", serif;
   /* -webkit-font-smoothing: antialiased; */
   -webkit-text-size-adjust: 100%;
 }
@@ -73,9 +74,11 @@ section {
     padding-top: 100px;
     padding-bottom: 100px;
   }
+
   .padded-top {
     padding-top: 100px;
   }
+
   .padded-bottom {
     padding-bottom: 100px;
   }
@@ -186,6 +189,7 @@ a:not(.lightbox):not(#side-nav li a):hover:before {
     line-height: 62px;
     padding-bottom: 40px;
   }
+
   h2 {
     padding-bottom: 40px;
   }
@@ -208,9 +212,11 @@ a:not(.lightbox):not(#side-nav li a):hover:before {
     line-height: 72px;
     padding-bottom: 50px;
   }
+
   h2 {
     padding-bottom: 40px;
   }
+
   p {
     font-size: 16px;
     line-height: 36px;
@@ -535,6 +541,7 @@ header .container {
     padding-top: 0px;
     padding-bottom: 0px;
   }
+
   .header-inner .logo {
     margin: 0;
     -webkit-transform: scale(1);
@@ -542,26 +549,32 @@ header .container {
     -ms-transform: scale(1, 1);
     transform: scale(1);
   }
+
   .menu-button {
     display: none;
   }
+
   #side-nav {
     display: block !important;
     text-align: right;
   }
+
   #side-nav a {
     background: none !important;
     padding-left: 0px;
     padding-right: 40px;
   }
+
   #side-nav a:after {
     left: auto;
     right: 0;
   }
+
   #side-nav li {
     margin-top: 0;
     margin-bottom: 25px;
   }
+
   #side-nav li:last-of-type {
     margin-bottom: 0px;
   }
@@ -622,10 +635,12 @@ header .container {
   .logo {
     margin-bottom: 10px;
   }
+
   .hero h2 {
     padding: 0;
     margin-bottom: 10px;
   }
+
   .hero h1 {
     margin: 0;
     padding: 0;
@@ -638,13 +653,16 @@ header .container {
   .logo {
     margin-bottom: 30px;
   }
+
   .scroll-to {
     display: block;
   }
+
   .hero h2 {
     padding-bottom: 20px;
     margin-bottom: 10px;
   }
+
   .hero h1 {
     margin: 0;
     padding: 0;
@@ -902,10 +920,12 @@ header .container {
 /* Landscape */
 
 @media only screen and (min-width: 480px) {
+
   .timeline .entry .time,
   .timeline .entry .content {
     width: 50%;
   }
+
   .timeline .entry .content {
     padding-top: 0px;
     padding-left: 0px;
@@ -919,6 +939,7 @@ header .container {
     top: 6px;
     left: -4px;
   }
+
   .timeline:before {
     left: 15px;
   }
@@ -1112,6 +1133,7 @@ footer {
   footer {
     text-align: left;
   }
+
   .social-list a {
     padding: 0px 15px 15px 0px;
     margin-right: 15px;
@@ -1122,11 +1144,13 @@ footer {
 -------------------------------------------------------------- */
 
 @keyframes bounce {
+
   0%,
   100% {
     -webkit-transform: translate3d(0, -30px, 0);
     transform: translate3d(0, -30px, 0);
   }
+
   50% {
     -webkit-transform: translate3d(0, -4px, 0);
     transform: translate3d(0, -4px, 0);
@@ -1138,6 +1162,7 @@ footer {
     opacity: 0;
     transform: translate3d(0, -100%, 0);
   }
+
   to {
     opacity: 1;
     transform: none;
@@ -1148,6 +1173,7 @@ footer {
   from {
     opacity: 1;
   }
+
   to {
     transform: translate3d(0, -100%, 0);
     opacity: 0;

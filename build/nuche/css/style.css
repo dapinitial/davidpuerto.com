@@ -22,8 +22,8 @@
 /*------------------------ 1 Body and Core Css ------------------------*/
 
 body {
-  font-family: 'Montserrat', sans-serif;
-  background: #eee;
+  font-family: "Gentium Basic", serif;
+  background: #444;
 }
 
 header {
@@ -756,12 +756,12 @@ section .section {
 #showcase .text {
   position: relative;
   z-index: 20;
-  color: #353535;
+  color: #fff;
   transition: padding ease 0.4s;
 }
 
 #showcase .text .title {
-  color: #353535;
+  color: #fff;
   font-size: 80px;
   font-weight: 700;
 }
@@ -840,7 +840,7 @@ a.view-project i {
 
 
 #showcase .text p {
-  color: #353535;
+  color: #fff;
   display: inline-block;
   font-size: 50px;
   font-weight: 700;
