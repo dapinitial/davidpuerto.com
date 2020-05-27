@@ -936,6 +936,7 @@ a.view-project i {
 
 #showcase-counter {
   float: right;
+  display: none;
 }
 
 #showcase-number {
@@ -1029,6 +1030,7 @@ a.view-project i {
 
 #fp-nav.right {
   right: 40px;
+  display: none;
 }
 
 #fp-nav ul li a span,
