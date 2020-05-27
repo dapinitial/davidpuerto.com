@@ -781,10 +781,11 @@ section .section {
 }
 
 a.view-project {
-  display: table;
+  align-items: center;
+  display: flex;
   background: #d2c23a;
   color: #111;
-  //border: solid 2px #fff;
+  border: solid 2px #111;
   border-radius: 50px;
   line-height: 0px;
   width: 54px;
