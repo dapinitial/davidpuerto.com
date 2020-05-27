@@ -1023,6 +1023,7 @@ a.view-project i {
 }
 
 #ft-nav {
+  display: none;
   top: 48%;
 }
 
@@ -2112,6 +2113,7 @@ blockquote {
     bottom: 40px;
     position: absolute;
     right: 40px;
+    display: none;
   }
 
   #showcase .text .title {
