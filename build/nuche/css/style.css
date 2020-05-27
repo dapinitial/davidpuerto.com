@@ -176,7 +176,7 @@ html.no-csstransitions .hero-content {
 
 .site-btn {
   color: #fff;
-  border: solid 2px #fbff03;
+  border: solid 2px #d2c23a;
   padding: 15px 30px;
   border-radius: 49px;
   font-size: 14px;
@@ -187,14 +187,14 @@ html.no-csstransitions .hero-content {
 
 .site-btn:hover {
   color: #000;
-  background: #fbff03;
+  background: #d2c23a;
   transition: all ease 0.3s;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
 }
 
 .site-btn:focus {
-  border: solid 2px #fbff03;
+  border: solid 2px #d2c23a;
 }
 
 .form-inp {
@@ -211,7 +211,7 @@ html.no-csstransitions .hero-content {
 
 .form-btn {
   color: #fff;
-  background: #fbff03;
+  background: #d2c23a;
   padding: 15px 55px;
   border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -227,7 +227,7 @@ html.no-csstransitions .hero-content {
 }
 
 .form-btn:hover {
-  background: #fbff03;
+  background: #d2c23a;
   transition: all ease 0.3s;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
@@ -302,7 +302,7 @@ button.close {
 }
 
 button.close:hover {
-  color: #fbff03;
+  color: #d2c23a;
 }
 
 .button {
@@ -658,7 +658,7 @@ footer .copyright p {
 }
 
 .highlight {
-  color: #fbff03;
+  color: #d2c23a;
 }
 
 .underline {
@@ -702,17 +702,17 @@ footer .copyright p {
 }
 
 .view-btn:hover:before {
-  background: #fbff03;
+  background: #d2c23a;
   transition: all ease 0.3s;
 }
 
 .view-btn:hover {
-  color: #fbff03;
+  color: #d2c23a;
   transition: all ease 0.3s;
 }
 
 .more-btn {
-  color: #fbff03;
+  color: #d2c23a;
   font-weight: 500;
   position: relative;
   height: 75px;
@@ -734,7 +734,7 @@ footer .copyright p {
 
 .site-btn {
   color: #fff;
-  border: solid 2px #fbff03;
+  border: solid 2px #d2c23a;
   border-radius: 49px;
   font-size: 14px;
   display: inline-block;
@@ -782,7 +782,7 @@ section .section {
 
 a.view-project {
   display: table;
-  background: #fbff03;
+  background: #d2c23a;
   color: #111;
   //border: solid 2px #fff;
   border-radius: 50px;
@@ -797,7 +797,7 @@ a.view-project {
 a.view-project:hover {
   width: 170px;
   padding-left: 24px;
-  background: #fbff03;
+  background: #d2c23a;
   color: #111;
   box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, .24);
   -webkit-transition: all ease 0.3s;
@@ -897,11 +897,11 @@ a.view-project i {
 }
 
 .social li a:hover {
-  color: #fbff03;
+  color: #d2c23a;
 }
 
 .social li a:hover i {
-  color: #fbff03;
+  color: #d2c23a;
   transform: rotate(360deg);
   transition: transform ease 0.3s;
 }
@@ -1118,7 +1118,7 @@ a.view-project i {
 }
 
 .black-content-title-description p span {
-  color: #fbff03;
+  color: #d2c23a;
   text-shadow: 0px 4px 6px #000;
 }
 
@@ -1166,7 +1166,7 @@ a.view-project i {
 }
 
 .work-item:hover .black-work-item-description h2 {
-  color: #fbff03;
+  color: #d2c23a;
   font-size: 120px;
   transition: all 0.4s ease;
   -webkit-transition: all 0.4s ease;
@@ -1191,7 +1191,7 @@ a.view-project i {
 
 .work-item .owl-nav button i {
   font-size: 40px;
-  color: #fbff03;
+  color: #d2c23a;
   margin-left: 35px;
 }
 
@@ -1236,7 +1236,7 @@ a.view-project i {
 
 .about .title .name {
   font-size: 120px;
-  color: #fbff03;
+  color: #d2c23a;
   font-weight: 700;
   margin-left: -145px;
   margin-top: 45px;
@@ -1308,7 +1308,7 @@ a.lightbox {
 }
 
 .list-style li a:hover>span {
-  color: #fbff03;
+  color: #d2c23a;
   transition: all ease 0.3s;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
@@ -1335,7 +1335,7 @@ a.lightbox {
 }
 
 .left-prev a:hover {
-  color: #fbff03;
+  color: #d2c23a;
   transition: all ease 0.3s;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
@@ -1362,7 +1362,7 @@ a.lightbox {
 }
 
 .right-next a:hover {
-  color: #fbff03;
+  color: #d2c23a;
   transition: all ease 0.3s;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
@@ -1418,7 +1418,7 @@ a.lightbox {
 }
 
 .blog-item:hover .post-title {
-  color: #fbff03;
+  color: #d2c23a;
   transition: all ease 0.3s;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
@@ -1476,7 +1476,7 @@ a.lightbox {
 
 .pagination .page-number:hover,
 .pagination .total-page:hover {
-  color: #fbff03;
+  color: #d2c23a;
   transition: all ease 0.3s;
   -webkit-transition: all ease 0.3s;
   -moz-transition: all ease 0.3s;
@@ -1517,7 +1517,7 @@ a.lightbox {
 
 .blog-categories a {
   margin-right: 5px;
-  color: #fbff03;
+  color: #d2c23a;
 }
 
 .blog-title {
@@ -1633,7 +1633,7 @@ blockquote {
 }
 
 .article-comments .comment-content .reply:hover {
-  color: #fbff03;
+  color: #d2c23a;
 }
 
 .article-comments .comment-content .reply:before {
@@ -1660,7 +1660,7 @@ blockquote {
 @media screen and (max-width: 1680px) {
   .about .title .name {
     font-size: 100px;
-    color: #fbff03;
+    color: #d2c23a;
     font-weight: 700;
     margin-left: -145px;
     margin-top: 45px;
@@ -1770,7 +1770,7 @@ blockquote {
   }
 
   .work-item .black-work-item-description h2 {
-    color: #fbff03;
+    color: #d2c23a;
     font-size: 40px !important;
   }
 
@@ -1875,7 +1875,7 @@ blockquote {
   a.view-project:hover {
     width: 54px;
     padding-left: 19px;
-    background: #fbff03;
+    background: #d2c23a;
     color: #111;
     box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, .24);
   }
