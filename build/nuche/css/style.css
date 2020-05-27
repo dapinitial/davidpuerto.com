@@ -2122,6 +2122,7 @@ blockquote {
   }
 
   #fp-nav {
+    display: none;
     top: 45%;
   }
 
